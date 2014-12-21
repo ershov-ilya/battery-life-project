@@ -1,19 +1,22 @@
 /**
  * Created by Ilya on 21.12.2014.
  */
-(function(){
+(function(angular){
 
-console.log('Hello from angular.js');
-var app = angular.module('core', [ ]);
+  console.log('Hello from angular.js');
+  var app = angular.module('core', ['ngSanitize']);
 
-app.controller('LangController', function() {
-  this.word=RU;
-});
+  app.controller('CoreController', ['$scope', function($scope) {
+    this.word=RU;
+    $scope.footer = footer;
+  }]);
 
-var RU={
-  'page':'страница',
-  'Page':'Страница',
-  'footer':'Футер'
-};
+  var footer = '<a href="#page">&laquo; назад</a>';
 
-})();
+  var RU={
+    'page':'страница',
+    'Page':'Страница',
+    'footer':'Футер'
+  };
+
+})(window.angular);

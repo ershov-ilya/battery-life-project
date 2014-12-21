@@ -40,7 +40,10 @@
     'back':'в начало',
     'page':'страница',
     'Page':'Страница',
-    'footer':'Футер'
+    'footer':'Футер',
+    'language_select': 'Выбор языка',
+    'personal_data': 'Анкета',
+    'battery_status':'Состояние батареи'
   };
 
   var EN={
@@ -48,7 +51,10 @@
     'back':' go back',
     'page':'page',
     'Page':'Page',
-    'footer':'Footer'
+    'footer':'Footer',
+    'language_select': 'Language select',
+    'personal_data': 'Personal settings',
+    'battery_status':'Battery status'
   };
 
 })(window.angular);

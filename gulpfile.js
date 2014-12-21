@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
     .pipe($.rubySass({
       style: 'expanded',
@@ -121,7 +121,7 @@ gulp.task('watch', ['connect'], function () {
     '.tmp/styles/**/*.css'
   ]).on('change', $.livereload.changed);
 
-  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/styles/**/*.scss', ['makecss']);
   gulp.watch('bower.json', ['wiredep']);
 });
 

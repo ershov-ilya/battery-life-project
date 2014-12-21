@@ -5,19 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8" />
 <title>Веб-приложение jQuery Mobile</title>
-  <link href="scripts/jquery-mobile/jquery.mobile.min.css" rel="stylesheet" type="text/css"/>
-  <link href="css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="components/jquery.mobile-theme/Life-battery.min.css" rel="stylesheet" type="text/css"/>
+  <link href="components/jquery.mobile-theme/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css"/>
+  <link href="components/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body ng-app="core" ng-controller="CoreController as lang">
 
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>{{lang.word.Page}} 1</h1>
+		<h1>{{lang.word.language_select}}</h1>
 	</div>
 	<div data-role="content">	
 		<ul data-role="listview">
 			<li><a href="#page2">{{lang.word.Page}} 2</a></li>
-            <li><a href="#page3">{{lang.word.Page}} 3</a></li>
+      <li><a href="#page3">{{lang.word.Page}} 3</a></li>
 			<li><a href="#page4">{{lang.word.Page}} 4</a></li>
 		</ul>		
 	</div>
@@ -58,7 +60,7 @@
 
 <!-- postfooter -->
 <script src="scripts/jquery/jquery.min.js" type="text/javascript"></script>
-<script src="scripts/jquery-mobile/jquery.mobile.min.js" type="text/javascript"></script>
+<script src="components/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
 <script src="scripts/angular/angular.min.js" type="text/javascript"></script>
 <script src="scripts/angular/angular-sanitize.js" type="text/javascript"></script>
 <script src="scripts/main.js" type="text/javascript"></script>

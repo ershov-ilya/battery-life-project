@@ -12,7 +12,7 @@
     $scope.footer = locale.chunk.footer;
   }]);
 
-  // Локализации
+  // Выбор локализации
   function getLocale(localeID){
     switch(localeID){
       case 'RU':
@@ -29,6 +29,7 @@
     return obj;
   }
 
+  // Локализации
   var RU={
     'content':'содержимое',
     'back':'в начало',

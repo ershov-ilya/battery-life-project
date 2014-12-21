@@ -1,6 +1,11 @@
 /**
- * Created by Ilya on 21.12.2014.
+ * Created by
+ * User: ershov-ilya
+ * Website: ershov.pw
+ * GitHub : https://github.com/ershov-ilya
+ * on 21.12.2014.
  */
+
 (function(angular){
 
   console.log('Hello from app.js');

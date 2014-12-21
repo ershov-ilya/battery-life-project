@@ -12,28 +12,33 @@
 </head>
 <body ng-app="core" ng-controller="CoreController as lang">
 
-<div data-role="page" id="page">
+<div data-role="page" id="language_select">
 	<div data-role="header">
 		<h1>{{lang.word.language_select}}</h1>
 	</div>
 	<div data-role="content">	
 		<ul data-role="listview">
-			<li><a href="#page2">{{lang.word.Page}} 2</a></li>
-      <li><a href="#page3">{{lang.word.Page}} 3</a></li>
-			<li><a href="#page4">{{lang.word.Page}} 4</a></li>
-		</ul>		
+			<li><a href="#personal_data" onclick="javascript:docState.lang='EN';return true;">English</a></li>
+      <li><a href="#personal_data" onclick="javascript:docState.lang='RU';return true;">Русский</a></li>
+		</ul>
 	</div>
 	<div data-role="footer" class="footer">
     <h2>{{lang.word.footer}}</h2>
 	</div>
 </div>
 
-<div data-role="page" id="page2">
+<div data-role="page" id="personal_data">
 	<div data-role="header">
-		<h1>{{lang.word.Page}} 2</h1>
+		<h1>{{lang.word.personal_data}}</h1>
 	</div>
-	<div data-role="content">	
-		{{lang.word.content}}
+	<div data-role="content">
+    <ul data-role="listview">
+      <li><a href="#page2">{{lang.word.Page}} 2</a></li>
+      <li><a href="#page3">{{lang.word.Page}} 3</a></li>
+      <li><a href="#page4">{{lang.word.Page}} 4</a></li>
+      <li><a href="#language_select">Back to language select</a></li>
+    </ul>
+    {{lang.word.content}}
 	</div>
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>

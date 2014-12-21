@@ -11,8 +11,14 @@
   console.log('Hello from app.js');
   var app = angular.module('core', ['ngSanitize']);
 
+  app.setLocale= function(localeID){
+    console.log('setLocale '+localeID);
+  };
+
   app.controller('CoreController', ['$scope', function($scope) {
-    var locale=getLocale('RU');
+    console.log('CoreController');
+    app.setLocale('EN');
+    var locale=getLocale(docState.lang);
     this.word=locale.word;
     $scope.footer = locale.chunk.footer;
   }]);
@@ -30,7 +36,7 @@
         var obj={word: EN};
     }
     obj.chunk={};
-    obj.chunk.footer='<a href="#page">&laquo; '+obj.word.back+'</a>';
+    obj.chunk.footer='<a href="#language_select">&laquo; '+obj.word.back+'</a>';
     return obj;
   }
 
@@ -53,7 +59,7 @@
     'Page':'Page',
     'footer':'Footer',
     'language_select': 'Language select',
-    'personal_data': 'Personal settings',
+    'personal_data': 'Personal data',
     'battery_status':'Battery status'
   };
 

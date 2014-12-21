@@ -6,5 +6,7 @@
  * on 21.12.2014.
  */
 
+var docState={lang:'EN'};
+
 /* jshint devel:true */
 console.log('Hello from main.js');

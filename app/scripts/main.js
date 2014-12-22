@@ -75,10 +75,10 @@ function supports_html5_storage() {
   }
 }
 
-console.log('Hello from main.js');
-var res=docState.check();
-
 $(document).ready(function(){
-  if(!docState.data.lang) $.mobile.changePage( "#language_select_dialog", { role: "dialog" } );
+  console.log("Event 'ready'");
+  docState.check();
+
+  //if(docState.data.localeID===undefined) $.mobile.changePage( "#language_select_dialog", { role: "dialog" } );
 });
 

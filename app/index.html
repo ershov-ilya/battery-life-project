@@ -10,7 +10,7 @@
   <link href="components/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" type="text/css"/>
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body ng-app ng-controller="MVW">
+<body ng-app ng-controller="MVW" ng-init="init()">
 
 <div data-role="page" id="personal_data">
 	<div data-role="header">
@@ -55,10 +55,10 @@
     <h2>What is your language?</h2>
     <div class="ui-grid-a">
       <div class="ui-block-a">
-        <a href="/" ng-click="setLocale('EN')"  class="ui-btn ui-btn-b ui-shadow ui-corner-all">English</a>
+        <a href="#personal_data" ng-click="setLocale('EN')"  class="ui-btn ui-btn-b ui-shadow ui-corner-all">English</a>
       </div>
       <div class="ui-block-b">
-        <a href="/" ng-click="setLocale('RU')" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Русский</a>
+        <a href="#personal_data" ng-click="setLocale('RU')" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Русский</a>
       </div>
     </div>
   </div>

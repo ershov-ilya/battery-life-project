@@ -10,7 +10,8 @@
 
 function MVW($scope) {
 
-  $scope.lang ={ word:EN, localeID:'EN' };
+  $scope.lang ={ word:EN };
+  $scope.data ={ localeID:'EN' };
 
   $scope.setLocale = function(localeID){
     switch(localeID){
@@ -23,12 +24,34 @@ function MVW($scope) {
       default:
         $scope.lang.word = EN;
     }
-    $scope.lang.localeID = localeID;
+    $scope.data.localeID = localeID;
+    //$scope.saveData();
+    return true;
   };
 
   $scope.getLocale = function(localeID){
-    return $scope.lang.localeID;
-  }
+    return $scope.data.localeID;
+  };
+
+  $scope.saveData = function(){
+    docState.data=$scope.data;
+    docState.save();
+  };
+
+  $scope.loadData = function(data){
+    console.log('Load data to scope');
+    $scope.data=docState.data;
+  };
+
+  $scope.tick= function() {
+    console.log('tick');
+  };
+
+  $scope.init = function() {
+    console.log("Event 'init'");
+    $scope.loadData();
+    if(docState.debug) console.log($scope.data);
+  };
 
 } // function MVW($scope)
 

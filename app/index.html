@@ -10,7 +10,7 @@
   <link href="components/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" type="text/css"/>
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body ng-app="core" ng-controller="CoreController as lang">
+<body ng-app ng-controller="MVW">
 
 <div data-role="page" id="personal_data">
 	<div data-role="header">
@@ -55,10 +55,10 @@
     <h2>What is your language?</h2>
     <div class="ui-grid-a">
       <div class="ui-block-a">
-        <a href="/" onclick="javascript:docState.data.lang='EN';docState.save();location.reload();return true;" class="ui-btn ui-btn-b ui-shadow ui-corner-all">English</a>
+        <a href="/" ng-click="setLocale('EN')"  class="ui-btn ui-btn-b ui-shadow ui-corner-all">English</a>
       </div>
       <div class="ui-block-b">
-        <a href="/" onclick="javascript:docState.data.lang='RU';docState.save();location.reload();return true;" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Русский</a>
+        <a href="/" ng-click="setLocale('RU')" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Русский</a>
       </div>
     </div>
   </div>
@@ -67,8 +67,7 @@
 <!-- postfooter -->
 <script src="scripts/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="components/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
-<script src="scripts/angular/angular.min.js" type="text/javascript"></script>
-<script src="scripts/angular/angular-sanitize.js" type="text/javascript"></script>
+<script src="scripts/angularjs/angular-1.2.27.min.js" type="text/javascript"></script>
 <script src="scripts/main.js" type="text/javascript"></script>
 <script src="scripts/app.js" type="text/javascript"></script>
 </body>

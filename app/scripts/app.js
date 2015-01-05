@@ -6,14 +6,12 @@
  * on 21.12.2014.
  */
 
-if(docState.debug) console.log('Hello from app.js');
-
 function MVW($scope) {
 
   $scope.lang ={ word:EN };
   $scope.data ={ localeID:'EN' };
 
-  $scope.setLocale = function(localeID){
+  $scope.setLocale = function(localeID, fLoadMode){
     switch(localeID){
       case 'RU':
         $scope.lang.word = RU;
@@ -25,12 +23,8 @@ function MVW($scope) {
         $scope.lang.word = EN;
     }
     $scope.data.localeID = localeID;
-    $scope.saveData();
+    if(!fLoadMode) $scope.saveData(); // no save if Load Mode
     return true;
-  };
-
-  $scope.getLocale = function(localeID){
-    return $scope.data.localeID;
   };
 
   $scope.saveData = function(){
@@ -38,19 +32,17 @@ function MVW($scope) {
     docState.save();
   };
 
-  $scope.loadData = function(data){
+  $scope.loadData = function(){
     if(docState.debug) console.log("Event $scope.loadData");
-    $scope.setLocale(docState.data.localeID);
-  };
-
-  $scope.tick= function() {
-    console.log('tick');
+    $scope.data=docState.data;
+    $scope.setLocale(docState.data.localeID, true);
   };
 
   $scope.init = function() {
     if(docState.debug) console.log("Event $scope.init");
-    docState.check();
-    $scope.loadData();
+    if(docState.check()){
+      $scope.loadData();
+    }
     if(docState.debug) console.log($scope.data);
   };
 
@@ -65,7 +57,9 @@ function MVW($scope) {
     footer:'Футер',
     language_select: 'Выбор языка',
     personal_data: 'Настройки',
-    battery_status:'Состояние батареи'
+    battery_status:'Состояние батареи',
+    user_profile:'Анкета пользователя',
+    clarify_data:'Уточнить данные'
   };
 
   var EN={
@@ -76,5 +70,7 @@ function MVW($scope) {
     footer:'Footer',
     language_select: 'Language select',
     personal_data: 'Settings',
-    battery_status:'Battery status'
+    battery_status:'Battery status',
+    user_profile:'User profile',
+    clarify_data:'Clarify data'
   };

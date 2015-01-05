@@ -11,6 +11,7 @@ var BATTERY = (function(){
   var DEBUG=true;
   var width = 500;
   var height = 1000;
+  var date = +new Date();
 
   //function buildDelayedFuncSetColor(key) {
   //  return function () {
@@ -21,7 +22,7 @@ var BATTERY = (function(){
   //}
 
   // Public methods
-  return {
+  var PUBLIC = {
     test: function(){ console.log('Works fine!');},
 
     setColor: function(value){
@@ -60,9 +61,16 @@ var BATTERY = (function(){
 
     },
 
-    setScale: function(maxWidth, maxHeight){
+    setScale: function(width, height){
+      //var battery = Raphael("battery", width, height);
+      //battery.setViewBox(0, 0, width, height );
+      //
+      //// Setting preserveAspectRatio to 'none' lets you stretch the SVG
+      //battery.canvas.setAttribute('preserveAspectRatio', 'none');
 
-    }
+      // Change the width and the height attributes manually through DOM
+      $('#battery').attr('width', width).attr('height', height);    }
   };
 
+  return PUBLIC;
 })(); // BATTERY end

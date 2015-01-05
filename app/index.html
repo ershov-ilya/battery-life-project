@@ -44,11 +44,143 @@
 	<div data-role="header">
 		<h1>{{lang.word.battery_status}}</h1>
 	</div>
-	<div data-role="content">
+	<div data-role="content" style="padding:0;">
 
-    <div id="battery" style="min-height:100px; background-color:red; ">
+  <div id="battery-wrapper" class="battery-container">
+    <a id="rotator" onclick="javascript:BATTERY.test();return false;">
+   <svg id="battery" class="rotate" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="1000px"
+   viewBox="0 0 500 1000" xml:space="preserve">
+    <g id="battery">
+      <rect id="background" x="51.217" y="165.667" class="background" width="397.372" height="710.21"/>
+      <rect id="column"  x="51.217" y="570.747" class="fluid" width="397.372" height="305.13"/>
+      <ellipse id="surface" class="surface" cx="249.997" cy="570.747" rx="198.63" ry="12.809"/>
+      <linearGradient id="SVGID_BG" gradientUnits="userSpaceOnUse" x1="51.2168" y1="520.7715" x2="448.5889" y2="520.7715">
+        <stop  offset="0" style="stop-color:#B8B7C5"/>
+        <stop  offset="0.0242" style="stop-color:#DDDEE3"/>
+        <stop  offset="0.3394" style="stop-color:#B8B7C5"/>
+        <stop  offset="0.9818" style="stop-color:#EBEAEF"/>
+        <stop  offset="1" style="stop-color:#CFCFD9"/>
+      </linearGradient>
+      <linearGradient id="SVGID_fluid_green" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#4D9900"/>
+        <stop  offset="0.0242" style="stop-color:#73E500"/>
+        <stop  offset="0.3394" style="stop-color:#59B200"/>
+        <stop  offset="0.9818" style="stop-color:#73E500"/>
+        <stop  offset="1" style="stop-color:#4D9900"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_green" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#8ECB51"/>
+        <stop  offset="0.0242" style="stop-color:#B3FF66"/>
+        <stop  offset="0.3394" style="stop-color:#99DA57"/>
+        <stop  offset="0.9818" style="stop-color:#B3FF66"/>
+        <stop  offset="1" style="stop-color:#8ECB51"/>
+      </linearGradient>
 
-      </div>
+        <linearGradient id="SVGID_fluid_salad" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#7A9900"/>
+        <stop  offset="0.0242" style="stop-color:#B7E500"/>
+        <stop  offset="0.3394" style="stop-color:#8EB200"/>
+        <stop  offset="0.9818" style="stop-color:#B7E500"/>
+        <stop  offset="1" style="stop-color:#7A9900"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_salad" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#B2CB51"/>
+        <stop  offset="0.0242" style="stop-color:#E0FF66"/>
+        <stop  offset="0.3394" style="stop-color:#C0DA57"/>
+        <stop  offset="0.9818" style="stop-color:#E0FF66"/>
+        <stop  offset="1" style="stop-color:#B2CB51"/>
+      </linearGradient>
+
+      <linearGradient id="SVGID_fluid_yellow" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#999400"/>
+        <stop  offset="0.0242" style="stop-color:#E5DD00"/>
+        <stop  offset="0.3394" style="stop-color:#B2AC00"/>
+        <stop  offset="0.9818" style="stop-color:#E5DD00"/>
+        <stop  offset="1" style="stop-color:#999400"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_yellow" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#CBC751"/>
+        <stop  offset="0.0242" style="stop-color:#FFFA66"/>
+        <stop  offset="0.3394" style="stop-color:#DAD657"/>
+        <stop  offset="0.9818" style="stop-color:#FFFA66"/>
+        <stop  offset="1" style="stop-color:#CBC751"/>
+      </linearGradient>
+
+      <linearGradient id="SVGID_fluid_orange" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#996600"/>
+        <stop  offset="0.0242" style="stop-color:#E59900"/>
+        <stop  offset="0.3394" style="stop-color:#B27700"/>
+        <stop  offset="0.9818" style="stop-color:#E59900"/>
+        <stop  offset="1" style="stop-color:#996600"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_orange" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#CBA251"/>
+        <stop  offset="0.0242" style="stop-color:#FFCC66"/>
+        <stop  offset="0.3394" style="stop-color:#DAAE57"/>
+        <stop  offset="0.9818" style="stop-color:#FFCC66"/>
+        <stop  offset="1" style="stop-color:#CBA251"/>
+      </linearGradient>
+
+      <linearGradient id="SVGID_fluid_orangered" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#994000"/>
+        <stop  offset="0.0242" style="stop-color:#E56000"/>
+        <stop  offset="0.3394" style="stop-color:#B24A00"/>
+        <stop  offset="0.9818" style="stop-color:#E56000"/>
+        <stop  offset="1" style="stop-color:#994000"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_orangered" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#CB8451"/>
+        <stop  offset="0.0242" style="stop-color:#FFA666"/>
+        <stop  offset="0.3394" style="stop-color:#DA8E57"/>
+        <stop  offset="0.9818" style="stop-color:#FFA666"/>
+        <stop  offset="1" style="stop-color:#CB8451"/>
+      </linearGradient>
+
+      <linearGradient id="SVGID_fluid_brown" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#992E00"/>
+        <stop  offset="0.0242" style="stop-color:#E54500"/>
+        <stop  offset="0.3394" style="stop-color:#B23600"/>
+        <stop  offset="0.9818" style="stop-color:#E54500"/>
+        <stop  offset="1" style="stop-color:#992E00"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_brown" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#CB7651"/>
+        <stop  offset="0.0242" style="stop-color:#FF9466"/>
+        <stop  offset="0.3394" style="stop-color:#DA7E57"/>
+        <stop  offset="0.9818" style="stop-color:#FF9466"/>
+        <stop  offset="1" style="stop-color:#CB7651"/>
+      </linearGradient>
+
+      <linearGradient id="SVGID_fluid_red" gradientUnits="userSpaceOnUse" x1="51.2168" y1="723.3125" x2="448.5889" y2="723.3125">
+        <stop  offset="0" style="stop-color:#990000"/>
+        <stop  offset="0.0242" style="stop-color:#E50000"/>
+        <stop  offset="0.3394" style="stop-color:#B20000"/>
+        <stop  offset="0.9818" style="stop-color:#E50000"/>
+        <stop  offset="1" style="stop-color:#990000"/>
+      </linearGradient>
+      <linearGradient id="SVGID_surface_red" gradientUnits="userSpaceOnUse" x1="51.3677" y1="570.7471" x2="448.627" y2="570.7471">
+        <stop  offset="0" style="stop-color:#CB5151"/>
+        <stop  offset="0.0242" style="stop-color:#FF6666"/>
+        <stop  offset="0.3394" style="stop-color:#DA5757"/>
+        <stop  offset="0.9818" style="stop-color:#FF6666"/>
+        <stop  offset="1" style="stop-color:#CB5151"/>
+      </linearGradient>
+    </g>
+    <g id="bottom">
+      <image style="overflow:visible;" width="398" height="73" xlink:href="images/lower_cap.png"  transform="matrix(1 0 0 1 51 846)">
+      </image>
+    </g>
+    <g id="top">
+      <g>
+        <image style="overflow:visible;" width="150" height="64" xlink:href="images/terminal.png"  transform="matrix(1 0 0 1 175 66)">
+        </image>
+        <image style="overflow:visible;" width="398" height="72" xlink:href="images/upper_cap.png"  transform="matrix(1 0 0 1 51 125)">
+        </image>
+      </g>
+    </g>
+  </svg>
+    </a> <!-- / a#rotator -->
+    </div><!-- / #battery-wrapper .battery-container -->
 
 	</div>
   <ul data-role="listview">
@@ -81,5 +213,6 @@
 <script src="scripts/angularjs/angular-1.2.27.min.js" type="text/javascript"></script>
 <script src="scripts/main.js" type="text/javascript"></script>
 <script src="scripts/app.js" type="text/javascript"></script>
+<script src="scripts/battery.js"></script>
 </body>
 </html>

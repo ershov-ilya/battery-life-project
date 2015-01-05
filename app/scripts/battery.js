@@ -12,19 +12,34 @@ var BATTERY = (function(){
   var batteryValue = 100;
   var width = 500;
   var height = 1000;
-  var date = +new Date();
   var queue = {};
+  var interval=30;
 
   function buildDelayedSetFunc(val, ptr) {
     return function () {
-      console.log('Delayed val: '+val);
       ptr.set(val);
     }
   }
 
+  function drawColumn(){
+    var value=batteryValue;
+    var y= 0, h=0;
+    // y: 860 - 165
+    y = 860-value*6.95;
+    // height: 10 - 700
+    h = 10 + value*6.9;
+    $("#column").attr("y",y);
+    $("#column").attr("height",h);
+
+    $("#surface").attr("cy",y);
+    return true;
+  }
+
+
+
   // Public methods
   var PUBLIC = {
-    test: function(){ date = +new Date(); var objDate=new Date(date); console.log(objDate); console.log('Works fine!');},
+    test: function(){ this.animate(batteryValue, 100);},
 
     setColor: function(){
       var value=batteryValue;
@@ -57,31 +72,53 @@ var BATTERY = (function(){
       batteryValue=Math.round(value);
     },
 
-    drawColumn: function(){
-      var value=batteryValue;
-      if(DEBUG) console.log('setColumn input data: '+value);
-      var y= 0, h=0;
-      // y: 860 - 165
-      y = 860-value*6.95;
-      // height: 10 - 700
-      h = 10 + value*6.9;
-      $("#column").attr("y",y);
-      $("#column").attr("height",h);
-
-      $("#surface").attr("cy",y);
-      console.log(value);
-      return true;
+    resize: function(){
+      $(window).resize(this.scale);
     },
 
-    setScale: function(width, height){
-      //var battery = Raphael("battery", width, height);
-      //battery.setViewBox(0, 0, width, height );
-      //
-      //// Setting preserveAspectRatio to 'none' lets you stretch the SVG
-      //battery.canvas.setAttribute('preserveAspectRatio', 'none');
+    scale: function(fInit){
+      var analys={}
+      analys.width = $(window).width();
+      analys.height = $(window).height()-50;
+      analys.vertical = (analys.height > analys.width) ? true : false;
+      analys.min = (analys.vertical)? analys.width : analys.height;
+      analys.max = (analys.vertical)? analys.height : analys.width;
+      if(analys.min>400) analys.min=400;
+      analys.ratio = analys.max/analys.min;
+      if(DEBUG) console.log(analys);
 
-      // Change the width and the height attributes manually through DOM
-      $('#battery').attr('width', width).attr('height', height);
+      var w,h;
+      // Предположим ориентация вертикальная
+      if(analys.ratio >=2){
+        w=analys.min-40;
+        h=w*2;
+      }else{
+        h=analys.max-40;
+        w=Math.round(h/2);
+      }
+/*
+      if(!analys.vertical){
+        var temp=h;
+        h=w;
+        w=temp;
+      }
+      /**/
+
+      if(analys.vertical) {
+        $("#rotator").removeClass("rotate90");
+        $("#rotator").css('marginTop','');
+        $("#battery-wrapper").css('height','');
+        $("#battery-wrapper").css('width','');
+      }else {
+        $("#rotator").addClass("rotate90");
+        $("#rotator").css('marginTop',-w/2);
+        $("#battery-wrapper").css('height',w);
+        $("#battery-wrapper").css('width','');
+      }
+      /**/
+
+      $('#battery').attr('width', w).attr('height', h);
+      if(fInit) drawColumn();
     },
 
     set:function(value){
@@ -91,31 +128,29 @@ var BATTERY = (function(){
       if(value<0) value=0;
 
       this.setValue(value);
-      this.drawColumn();
+      drawColumn();
       this.setColor();
       return true;
     },
 
-    animate:function(value){
+    animate:function(value, oldvalue){
+      if(oldvalue===undefined) oldvalue=batteryValue;
       if(DEBUG){
-        console.log('batteryValue='+batteryValue);
+        console.log('batteryValue='+oldvalue);
         console.log('value='+value);
       }
       value=Math.round(value);
       queue = {};
       var timeout=0;
-      var interval=30;
-      var positiveDir = (value>batteryValue) ? true : false;
+      var positiveDir = (value>oldvalue) ? true : false;
       if(positiveDir){
-        for(var i=batteryValue; i<=value; i++){
-          if(DEBUG) console.log(i);
+        for(var i=oldvalue; i<=value; i++){
           queue[i]= buildDelayedSetFunc(i, this);
           setTimeout(queue[i], timeout);
           timeout+=interval;
         }
       }else{
-        for(var i=batteryValue; i>=value; i--){
-          if(DEBUG) console.log(i);
+        for(var i=oldvalue; i>=value; i--){
           queue[i]= buildDelayedSetFunc(i, this);
           setTimeout(queue[i], timeout);
           timeout+=interval;

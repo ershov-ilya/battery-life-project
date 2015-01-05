@@ -19,3 +19,29 @@ body{
   text-shadow: none;
   color:#fff;
 }
+
+.background{fill:url(#SVGID_BG);}
+.fluid{fill:url(#SVGID_fluid_green);}
+.surface{fill:url(#SVGID_surface_green);}
+#battery stop{
+  -webkit-transition: stop-color 1s ease-out 0.5s;
+  -moz-transition: stop-color 1s ease-out 0.5s;
+  -o-transition: stop-color 1s ease-out 0.5s;
+  transition: stop-color 1s ease-out 0.5s;
+}
+
+.battery-container{margin: 0; padding:0; overflow: hidden;
+  /*background-color: #00415e;*/
+  text-align: center;}
+.battery-container>svg{display:inline-block;}
+#rotator{
+  display: inline-block;
+  overflow: hidden;
+}
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}

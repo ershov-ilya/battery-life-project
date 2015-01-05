@@ -78,7 +78,8 @@ function supports_html5_storage() {
 
 $(document).ready(function(){
   if(this.debug) console.log("Event 'ready'");
-
+  BATTERY.scale(true);
+  BATTERY.resize();
   //if(docState.data.localeID===undefined) $.mobile.changePage( "#language_select_dialog", { role: "dialog" } );
 });
 

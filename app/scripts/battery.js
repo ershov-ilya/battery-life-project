@@ -32,6 +32,7 @@ var BATTERY = (function(){
     $("#column").attr("height",h);
 
     $("#surface").attr("cy",y);
+    $("#battery-status").text(value+"%");
     return true;
   }
 

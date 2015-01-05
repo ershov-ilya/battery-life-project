@@ -31,9 +31,15 @@ body{
 }
 
 .battery-container{margin: 0; padding:0; overflow: hidden;
-  /*background-color: #00415e;*/
+  position: relative;
   text-align: center;}
 .battery-container>svg{display:inline-block;}
+
+#battery-status{
+  color:#fff;
+  position:absolute; left:45%; top:43%; z-index: 500;
+  text-shadow: 0 0 1px #333;
+}
 #rotator{
   display: inline-block;
   overflow: hidden;

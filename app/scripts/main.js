@@ -80,6 +80,10 @@ $(document).ready(function(){
   if(this.debug) console.log("Event 'ready'");
   BATTERY.scale(true);
   BATTERY.resize();
-  //if(docState.data.localeID===undefined) $.mobile.changePage( "#language_select_dialog", { role: "dialog" } );
+  $("input").on("change",function(){
+    var val = $(this).val();
+    console.log("Input: "+val);
+  })
+
 });
 

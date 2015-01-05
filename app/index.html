@@ -32,7 +32,10 @@
 		<h1>{{lang.word.user_profile}}</h1>
 	</div>
 	<div data-role="content">
-    {{lang.word.content}}
+    <div class="ui-field-contain">
+      <label for="date">{{lang.word.your_birthday_date}}:</label>
+        <input type="date" name="date" id="date" value="">
+    </div>
 	</div>
   <ul data-role="listview">
     <li><a href="#battery_status">{{lang.word.battery_status}}</a></li>
@@ -214,8 +217,9 @@
 <script src="scripts/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="components/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
 <script src="scripts/angularjs/angular-1.2.27.min.js" type="text/javascript"></script>
-<script src="scripts/main.js" type="text/javascript"></script>
 <script src="scripts/app.js" type="text/javascript"></script>
 <script src="scripts/battery.js"></script>
+<script src="scripts/form-control.js" type="text/javascript"></script>
+<script src="scripts/main.js" type="text/javascript"></script>
 </body>
 </html>

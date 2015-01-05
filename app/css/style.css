@@ -50,8 +50,10 @@ body {
 #battery-status {
   color: #fff;
   position: absolute;
-  left: 45%;
-  top: 43%;
+  left: 50%;
+  top: 50%;
+  margin-left: -32px;
+  margin-top: -20px;
   z-index: 500;
   text-shadow: 0 0 1px #333;
 }

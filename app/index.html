@@ -42,15 +42,22 @@
     </div>
 
     <fieldset class="ui-field-contain">
-      <label for="day">Where are you from?</label>
+      <label for="day">Where you live?</label>
       <select name="day" id="day" data-native-menu="false">
-        <option value="mon">Monday</option>
-        <option value="tue">Tuesday</option>
-        <option value="wed">Wednesday</option>
-        <option value="thu">Thursday</option>
-        <option value="fri">Friday</option>
-        <option value="sat">Saturday</option>
-        <option value="sun">Sunday</option>
+        <option value="none">Select</option>
+        <option value="Russia">Russia</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="France">France</option>
+        <option value="Australia">Australia</option>
+        <option value="Canada">Canada</option>
+        <option value="Norway">Norway</option>
+        <option value="Israel">Israel</option>
+        <option value="Spain">Spain</option>
+        <option value="Germany">Germany</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States Of America">United States Of America</option>
       </select>
     </fieldset>
 
@@ -81,10 +88,12 @@
         <legend>Отношение к алкоголю?</legend>
         <label for="alko_no">Категорически нет</label>
         <input type="radio" name="alko" id="alko_no" value="No">
-        <label for="alko_1_10">Иногда, 1-2 порции вечером</label>
-        <input type="radio" name="alko" id="alko_1_10" value="alko_1_10">
-        <label for="alko_10_30">Когда с друзьями. По другому никак</label>
-        <input type="radio" name="alko" id="alko_10_30" value="alko_10_30">
+        <label for="alko_events">Редко, по праздникам</label>
+        <input type="radio" name="alko" id="alko_events" value="alko_events">
+        <label for="alko_1_2">Иногда, 1-2 порции вечером</label>
+        <input type="radio" name="alko" id="alko_1_2" value="alko_1_2">
+        <label for="alko_partyman">Когда с друзьями. По другому никак</label>
+        <input type="radio" name="alko" id="alko_partyman" value="alko_partyman">
         <label for="alkoholic">Готов признать - я алкоголик</label>
         <input type="radio" name="alko" id="alkoholic" value="alkoholic">
       </fieldset>
@@ -96,12 +105,33 @@
         <legend>Физические упражения?</legend>
         <label for="sport_no">Нет</label>
         <input type="radio" name="sport" id="sport_no" value="No">
-        <label for="sport_1_10">1-10 сигарет в день</label>
-        <input type="radio" name="sport" id="sport_1_10" value="sport_1_10">
-        <label for="sport_10_30">10-30 сигарет в день</label>
-        <input type="radio" name="sport" id="sport_10_30" value="sport_10_30">
+        <label for="sport_20min">Регулярно, 20 минут в день</label>
+        <input type="radio" name="sport" id="sport_20min" value="sport_20min">
+        <label for="sport_1hour">Регулярно, час в день</label>
+        <input type="radio" name="sport" id="sport_1hour" value="sport_1hour">
       </fieldset>
     </div>
+
+    <div class="ui-field-contain">
+      <fieldset data-role="controlgroup">
+        <legend>Смотрите ТВ?</legend>
+        <label for="tv_no">Нет</label>
+        <input type="radio" name="tv" id="tv_no" value="tv_no">
+        <label for="tv_2hours">Пару часов в день</label>
+        <input type="radio" name="tv" id="tv_2hours" value="tv_2hours">
+      </fieldset>
+    </div>
+
+    <div class="ui-field-contain">
+      <fieldset data-role="controlgroup">
+        <legend>Избыточный вес?</legend>
+        <label for="weight_no">Нет</label>
+        <input type="radio" name="weight" id="weight_no" value="weight_no">
+        <label for="weight_10">Более 5 кг</label>
+        <input type="radio" name="weight" id="weight_10" value="weight_10">
+      </fieldset>
+    </div>
+
 
   </div><!-- / .content -->
   <ul data-role="listview">

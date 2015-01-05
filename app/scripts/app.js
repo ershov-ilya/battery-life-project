@@ -58,7 +58,7 @@ function MVW($scope) {
     language_select: 'Выбор языка',
     personal_data: 'Настройки',
     battery_status:'Состояние Вашей батарейки',
-    user_profile:'Анкета пользователя',
+    user_profile:'Анкета',
     clarify_data:'Уточнить данные',
     your_birthday_date:'Дата Вашего рождения'
   };

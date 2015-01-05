@@ -18,7 +18,7 @@
 	</div>
     <ul data-role="listview">
       <li><a href="#page2">{{lang.word.Page}} 2</a></li>
-      <li><a href="#page3">{{lang.word.Page}} 3</a></li>
+      <li><a href="#battery_status">{{lang.word.battery_status}}</a></li>
       <li><a href="#language_select_dialog" data-rel="dialog">Change language</a></li>
     </ul>
   <div data-role="content">
@@ -37,13 +37,20 @@
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>
 
-<div data-role="page" id="page3">
+<div data-role="page" id="battery_status">
 	<div data-role="header">
-		<h1>{{lang.word.Page}} 4</h1>
+		<h1>{{lang.word.battery_status}}</h1>
 	</div>
 	<div data-role="content">
-    {{lang.word.content}}
+
+    <div id="battery" style="min-height:100px; background-color:red; ">
+
+      </div>
+
 	</div>
+  <ul data-role="listview">
+    <li><a href="#personal_data">{{lang.word.personal_data}}</a></li>
+  </ul>
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>
 

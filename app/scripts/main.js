@@ -41,6 +41,7 @@ docState.save = function(){
 };
 
 docState.load = function(){
+  if(this.debug) console.log("Event docState.load");
   this.flagLock=true;
   var json=localStorage['docStateData'];
   var obj=JSON.parse(localStorage['docStateData']);
@@ -54,7 +55,7 @@ docState.load = function(){
 };
 
 docState.reset = function(){
-  if(this.debug) console.log('Reset:');
+  if(this.debug) console.log('Event docState.reset:');
   this.flagReset=true;
   console.log(this);
   localStorage.removeItem('docStateData');
@@ -76,8 +77,7 @@ function supports_html5_storage() {
 }
 
 $(document).ready(function(){
-  console.log("Event 'ready'");
-  docState.check();
+  if(this.debug) console.log("Event 'ready'");
 
   //if(docState.data.localeID===undefined) $.mobile.changePage( "#language_select_dialog", { role: "dialog" } );
 });

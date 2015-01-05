@@ -6,7 +6,7 @@
  * on 21.12.2014.
  */
 
-  console.log('Hello from app.js');
+if(docState.debug) console.log('Hello from app.js');
 
 function MVW($scope) {
 
@@ -25,7 +25,7 @@ function MVW($scope) {
         $scope.lang.word = EN;
     }
     $scope.data.localeID = localeID;
-    //$scope.saveData();
+    $scope.saveData();
     return true;
   };
 
@@ -39,8 +39,8 @@ function MVW($scope) {
   };
 
   $scope.loadData = function(data){
-    console.log('Load data to scope');
-    $scope.data=docState.data;
+    if(docState.debug) console.log("Event $scope.loadData");
+    $scope.setLocale(docState.data.localeID);
   };
 
   $scope.tick= function() {
@@ -48,7 +48,8 @@ function MVW($scope) {
   };
 
   $scope.init = function() {
-    console.log("Event 'init'");
+    if(docState.debug) console.log("Event $scope.init");
+    docState.check();
     $scope.loadData();
     if(docState.debug) console.log($scope.data);
   };
@@ -57,7 +58,7 @@ function MVW($scope) {
 
   // Локализации
   var RU={
-    content:'содержимое',
+    content:'Контент',
     back:'настройки',
     page:'страница',
     Page:'Страница',

@@ -13,14 +13,14 @@ var BATTERY = (function(){
   var width = 500;
   var height = 1000;
   var date = +new Date();
+  var queue = {};
 
-  //function buildDelayedFuncSetColor(key) {
-  //  return function () {
-  //    console.log(key);
-  //    $('.fluid').css({fill:'url(#SVGID_fluid_'+key+')'});
-  //    $('.surface').css({fill:'url(#SVGID_surface_'+key+')'});
-  //  }
-  //}
+  function buildDelayedSetFunc(val, ptr) {
+    return function () {
+      console.log('Delayed val: '+val);
+      ptr.set(val);
+    }
+  }
 
   // Public methods
   var PUBLIC = {
@@ -54,7 +54,7 @@ var BATTERY = (function(){
     },
 
     setValue: function(value) {
-      batteryValue=value;
+      batteryValue=Math.round(value);
     },
 
     drawColumn: function(){
@@ -93,6 +93,35 @@ var BATTERY = (function(){
       this.setValue(value);
       this.drawColumn();
       this.setColor();
+      return true;
+    },
+
+    animate:function(value){
+      if(DEBUG){
+        console.log('batteryValue='+batteryValue);
+        console.log('value='+value);
+      }
+      value=Math.round(value);
+      queue = {};
+      var timeout=0;
+      var interval=30;
+      var positiveDir = (value>batteryValue) ? true : false;
+      if(positiveDir){
+        for(var i=batteryValue; i<=value; i++){
+          if(DEBUG) console.log(i);
+          queue[i]= buildDelayedSetFunc(i, this);
+          setTimeout(queue[i], timeout);
+          timeout+=interval;
+        }
+      }else{
+        for(var i=batteryValue; i>=value; i--){
+          if(DEBUG) console.log(i);
+          queue[i]= buildDelayedSetFunc(i, this);
+          setTimeout(queue[i], timeout);
+          timeout+=interval;
+        }
+      }
+      return 'Success';
     }
 
   };

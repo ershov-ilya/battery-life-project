@@ -27,21 +27,91 @@
   <div data-role="footer" class="footer"></div>
 </div>
 
+
+
+
 <div data-role="page" id="user_profile">
 	<div data-role="header">
 		<h1>{{lang.word.user_profile}}</h1>
 	</div>
 	<div data-role="content">
+
     <div class="ui-field-contain">
       <label for="date">{{lang.word.your_birthday_date}}:</label>
         <input type="date" name="date" id="date" value="">
     </div>
-	</div>
+
+    <fieldset class="ui-field-contain">
+      <label for="day">Where are you from?</label>
+      <select name="day" id="day" data-native-menu="false">
+        <option value="mon">Monday</option>
+        <option value="tue">Tuesday</option>
+        <option value="wed">Wednesday</option>
+        <option value="thu">Thursday</option>
+        <option value="fri">Friday</option>
+        <option value="sat">Saturday</option>
+        <option value="sun">Sunday</option>
+      </select>
+    </fieldset>
+
+    <div class="ui-field-contain">
+      <fieldset data-role="controlgroup">
+        <legend>Choose your gender:</legend>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+      </fieldset>
+    </div>
+
+    <div class="ui-field-contain">
+      <fieldset data-role="controlgroup">
+        <legend>Вы курите?</legend>
+        <label for="smoking_no">Нет</label>
+        <input type="radio" name="smoking" id="smoking_no" value="No">
+        <label for="smoking_1_10">1-10 сигарет в день</label>
+        <input type="radio" name="smoking" id="smoking_1_10" value="smoking_1_10">
+        <label for="smoking_10_30">10-30 сигарет в день</label>
+        <input type="radio" name="smoking" id="smoking_10_30" value="smoking_10_30">
+      </fieldset>
+    </div>
+
+    <div class="ui-field-contain">
+      <fieldset data-role="controlgroup">
+        <legend>Отношение к алкоголю?</legend>
+        <label for="alko_no">Категорически нет</label>
+        <input type="radio" name="alko" id="alko_no" value="No">
+        <label for="alko_1_10">Иногда, 1-2 порции вечером</label>
+        <input type="radio" name="alko" id="alko_1_10" value="alko_1_10">
+        <label for="alko_10_30">Когда с друзьями. По другому никак</label>
+        <input type="radio" name="alko" id="alko_10_30" value="alko_10_30">
+        <label for="alkoholic">Готов признать - я алкоголик</label>
+        <input type="radio" name="alko" id="alkoholic" value="alkoholic">
+      </fieldset>
+    </div>
+
+
+    <div class="ui-field-contain">
+      <fieldset data-role="controlgroup">
+        <legend>Физические упражения?</legend>
+        <label for="sport_no">Нет</label>
+        <input type="radio" name="sport" id="sport_no" value="No">
+        <label for="sport_1_10">1-10 сигарет в день</label>
+        <input type="radio" name="sport" id="sport_1_10" value="sport_1_10">
+        <label for="sport_10_30">10-30 сигарет в день</label>
+        <input type="radio" name="sport" id="sport_10_30" value="sport_10_30">
+      </fieldset>
+    </div>
+
+  </div><!-- / .content -->
   <ul data-role="listview">
     <li><a href="#battery_status">{{lang.word.battery_status}}</a></li>
   </ul>
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>
+
+
+
 
 <div data-role="page" id="battery_status">
 	<div data-role="header">
@@ -188,7 +258,7 @@
     </a> <!-- / a#rotator -->
     </div><!-- / #battery-wrapper .battery-container -->
 
-	</div>
+</div>
   <ul data-role="listview">
     <li><a href="#user_profile">{{lang.word.clarify_data}}</a></li>
     <li><a href="#personal_data">{{lang.word.personal_data}}</a></li>

@@ -57,10 +57,10 @@ function MVW($scope) {
     footer:'Футер',
     language_select: 'Выбор языка',
     personal_data: 'Настройки',
-    battery_status:'Состояние батареи',
+    battery_status:'Состояние Вашей батарейки',
     user_profile:'Анкета пользователя',
     clarify_data:'Уточнить данные',
-    your_birthday_date:'Ваша дата рождения'
+    your_birthday_date:'Дата Вашего рождения'
   };
 
   var EN={
@@ -71,7 +71,7 @@ function MVW($scope) {
     footer:'Footer',
     language_select: 'Language select',
     personal_data: 'Settings',
-    battery_status:'Battery status',
+    battery_status:'Yours battery status',
     user_profile:'User profile',
     clarify_data:'Clarify data',
     your_birthday_date:'Your birthday date'

@@ -2,38 +2,39 @@
 <html>
 <head lang="ru">
   <meta charset="UTF-8">
-  <title></title>
+  <title>Life Battery</title>
+	<style type="text/css">
+		*{margin: 0; padding:0;}
+		.background{fill:url(#SVGID_BG);}
+		.fluid{fill:url(#SVGID_fluid_green);}
+		.surface{fill:url(#SVGID_surface_green);}
+		#battery stop{
+			-webkit-transition: stop-color 1s ease-out 0.5s;
+			-moz-transition: stop-color 1s ease-out 0.5s;
+			-o-transition: stop-color 1s ease-out 0.5s;
+			transition: stop-color 1s ease-out 0.5s;
+		}
+
+		.battery-container{margin: 0; padding:0; overflow: hidden; background-color: #00415e; height:1000px; text-align: center;}
+		.battery-container>svg{display:inline-block;}
+		.rotate90 {
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+	</style>
 </head>
 <body>
 
-<div id="battery-wrapper" style="background-color: #00415e; width:500px; height:1000px;">
+<div id="battery-wrapper" class="battery-container">
 
-  <svg id="battery" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="1000px"
+  <svg id="battery" class="rotate" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="1000px"
    viewBox="0 0 500 1000" style="enable-background:new 0 0 500 1000;" xml:space="preserve">
-<style type="text/css">
-.background{fill:url(#SVGID_BG);}
-.fluid{fill:url(#SVGID_fluid_green);}
-.surface{fill:url(#SVGID_surface_green);}
-#battery stop{
-  -webkit-transition: stop-color 1s ease-out 0.5s;
-  -moz-transition: stop-color 1s ease-out 0.5s;
-  -o-transition: stop-color 1s ease-out 0.5s;
-  transition: stop-color 1s ease-out 0.5s;
-}
-/*
-green 95%
-salad
-yellow
-orangered
-orange
-brown
-red 5%
-*/
-
-</style>
 <g id="battery">
-	<rect x="51.217" y="165.667" class="background" width="397.372" height="710.21"/>
-	<rect x="51.217" y="570.747" class="fluid" width="397.372" height="305.13"/>
+	<rect id="surface" x="51.217" y="165.667" class="background" width="397.372" height="710.21"/>
+	<rect id="column"  x="51.217" y="570.747" class="fluid" width="397.372" height="305.13"/>
 	<ellipse class="surface" cx="249.997" cy="570.747" rx="198.63" ry="12.809"/>
 	<linearGradient id="SVGID_BG" gradientUnits="userSpaceOnUse" x1="51.2168" y1="520.7715" x2="448.5889" y2="520.7715">
 		<stop  offset="0" style="stop-color:#B8B7C5"/>

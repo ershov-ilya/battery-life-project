@@ -12,13 +12,14 @@ var BATTERY = (function(){
   var width = 500;
   var height = 1000;
 
-  function buildDelayedFuncSetColor(key) {
-    return function () {
-      console.log(key);
-      $('.fluid').css({fill:'url(#SVGID_fluid_'+key+')'});
-      $('.surface').css({fill:'url(#SVGID_surface_'+key+')'});
-    }
-  }
+  //function buildDelayedFuncSetColor(key) {
+  //  return function () {
+  //    console.log(key);
+  //    $('.fluid').css({fill:'url(#SVGID_fluid_'+key+')'});
+  //    $('.surface').css({fill:'url(#SVGID_surface_'+key+')'});
+  //  }
+  //}
+
   // Public methods
   return {
     test: function(){ console.log('Works fine!');},
@@ -53,8 +54,15 @@ var BATTERY = (function(){
 
       if(DEBUG) console.log(color);
       return true;
-    }
+    },
 
+    setColumn: function(value){
+
+    },
+
+    setScale: function(maxWidth, maxHeight){
+
+    }
   };
 
 })(); // BATTERY end

@@ -9,6 +9,7 @@
 var BATTERY = (function(){
   // Private methods and data
   var DEBUG=true;
+  var batteryValue = 100;
   var width = 500;
   var height = 1000;
   var date = +new Date();
@@ -23,13 +24,10 @@ var BATTERY = (function(){
 
   // Public methods
   var PUBLIC = {
-    test: function(){ console.log('Works fine!');},
+    test: function(){ date = +new Date(); var objDate=new Date(date); console.log(objDate); console.log('Works fine!');},
 
-    setColor: function(value){
-      if(typeof value === "string"){
-        value = parseFloat(value, 0);
-      }
-      //var surface='green', fluid='green';
+    setColor: function(){
+      var value=batteryValue;
       var rainbow={
         green:95,
         salad:80,
@@ -52,13 +50,27 @@ var BATTERY = (function(){
       }
       $('.fluid').css({fill:'url(#SVGID_fluid_'+color+')'});
       $('.surface').css({fill:'url(#SVGID_surface_'+color+')'});
-
-      if(DEBUG) console.log(color);
       return true;
     },
 
-    setColumn: function(value){
+    setValue: function(value) {
+      batteryValue=value;
+    },
 
+    drawColumn: function(){
+      var value=batteryValue;
+      if(DEBUG) console.log('setColumn input data: '+value);
+      var y= 0, h=0;
+      // y: 860 - 165
+      y = 860-value*6.95;
+      // height: 10 - 700
+      h = 10 + value*6.9;
+      $("#column").attr("y",y);
+      $("#column").attr("height",h);
+
+      $("#surface").attr("cy",y);
+      console.log(value);
+      return true;
     },
 
     setScale: function(width, height){
@@ -69,7 +81,20 @@ var BATTERY = (function(){
       //battery.canvas.setAttribute('preserveAspectRatio', 'none');
 
       // Change the width and the height attributes manually through DOM
-      $('#battery').attr('width', width).attr('height', height);    }
+      $('#battery').attr('width', width).attr('height', height);
+    },
+
+    set:function(value){
+      if(!value) return false;
+      if(typeof value === "string"){ value = parseFloat(value, 0); }
+      if(value>100) value=100;
+      if(value<0) value=0;
+
+      this.setValue(value);
+      this.drawColumn();
+      this.setColor();
+    }
+
   };
 
   return PUBLIC;

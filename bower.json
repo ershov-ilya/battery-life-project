@@ -2,11 +2,11 @@
   "name": "life-battery",
   "private": true,
   "dependencies": {
-    "jquery": "*",
+    "jquery": "~1.11",
     "jquery-mobile": "*",
     "bootstrap-sass-official": "~3.3.1",
     "bootswatch-scss": "3.3",
-    "angular": "1.2",
+    "angular": "1.2.27",
     "modernizr": "~2.8.1"
   }
 }

@@ -13,7 +13,8 @@ var BLACKBOX = (function() {
     data={},
     analys={},
     today= 0,
-    lastError={};
+    lastError={},
+    countries=[];
 
   var stat={"Andorra"		: [82.75,80.4,85.1],
     "Japan"		: [82.15,78.7,85.6],
@@ -319,7 +320,13 @@ var BLACKBOX = (function() {
       process();
       if(DEBUG) console.log(this.test());
     },
-    countries: function(){}
+    getCountriesList: function(){
+      if(countries.length>0) return countries;
+      for (key in stat){
+        countries.push(key);
+      }
+      return countries;
+    }
   };
 
   return PUBLIC;

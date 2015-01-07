@@ -9,7 +9,7 @@
 var BLACKBOX = (function() {
   // Private data
   var DEBUG = true,
-    result = 100,
+    batteryStatus = 100,
     data={},
     analys={},
     today= 0,
@@ -224,7 +224,7 @@ var BLACKBOX = (function() {
       case 'smoking':
         arr={
           smoking_no:+2,
-          smoking_1_10:-1,
+          smoking_1_10:-2,
           smoking_10_30:-3
         };
         value = arr[variant];
@@ -235,7 +235,7 @@ var BLACKBOX = (function() {
           alko_events:0,
           alko_1_2:-1,
           alko_partyman:-2,
-          alkoholic:-3
+          alkoholic:-5
         };
         value = arr[variant];
         break;
@@ -256,7 +256,7 @@ var BLACKBOX = (function() {
         break;
       case 'weight':
         arr={
-          weight_no:0.5,
+          weight_no:0,
           weight_10:-0.5
         };
         value = arr[variant];
@@ -289,38 +289,33 @@ var BLACKBOX = (function() {
       var thisEst=0;
       for(key in data){
         thisEst=evaluate(key, data[key]);
-        //console.log(key+' : '+data[key]+', value='+thisEst);
         estimate+=thisEst;
       }
       console.log("Итог, часов в день:"+estimate);
       analys.predictionDayLength=24+estimate;
       //analys.predictionFinish=new Date(analys.predictionDayLength*analys.predictionDays*3600000+birthday);
       analys.predictionFinishAgeDays=analys.predictionDays*analys.predictionDayLength/24;
-      analys.predictionFinishAge=analys.predictionDayLength*analys.predictionDays / 365.25;
-
+      analys.predictionFinishAge=analys.predictionFinishAgeDays/ 365.25;
+      batteryStatus = Math.round((analys.predictionFinishAgeDays - analys.ageDays) / analys.predictionFinishAgeDays *100);
     }
     catch(e){
       console.log('Error:');
       console.log(e);
       return false;
     }
-    return true;
+    return batteryStatus;
   }
 
   //Public data
   var PUBLIC={
-    get: function(){return result;},
+    status: function(){return batteryStatus;},
+    get: function(){return batteryStatus;},
     test: function(){return analys;},
     getError: function(){return lastError.message;},
     resetError: function(){lastError={}; return true;},
     put: function(input){
       if(input===undefined) return false;
-      //if(data===input){
-      //  if(DEBUG) console.log('Data is the same');
-      //  return true;
-      //}
       data = input;
-      console.log(data);
       process();
       if(DEBUG) console.log(this.test());
     }

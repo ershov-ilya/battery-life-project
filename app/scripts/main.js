@@ -117,7 +117,11 @@ $(document).ready(function(){
   if(this.debug) console.log("Event 'ready'");
   BATTERY.scale(true);
   BATTERY.resize();
-  $("form input, form select").on("change",fieldChange)
+  $("form input, form select").on("change",fieldChange);
+
+  $(document).on("pageshow","#battery_status",function(){
+    BATTERY.animate(BLACKBOX.status());
+  });
 
 });
 

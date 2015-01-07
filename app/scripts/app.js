@@ -60,7 +60,9 @@ function MVW($scope) {
     battery_status:'Состояние Вашей батарейки',
     user_profile:'Анкета',
     clarify_data:'Уточнить данные',
-    your_birthday_date:'Дата Вашего рождения'
+    your_birthday_date:'Дата Вашего рождения',
+    male:'Муж',
+    female:'Жен'
   };
 
   var EN={
@@ -74,5 +76,7 @@ function MVW($scope) {
     battery_status:'Yours battery status',
     user_profile:'User profile',
     clarify_data:'Clarify data',
-    your_birthday_date:'Your birthday date'
+    your_birthday_date:'Your birthday date',
+    male:'Male',
+    female:'Female'
   };

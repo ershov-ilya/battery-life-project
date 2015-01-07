@@ -9,6 +9,34 @@
 
 var docState={data:{},changes:false,debug:true,flagReset:false};
 
+function fieldChange(){
+  var name = $(this).attr("name");
+  var tag = $(this).get(0).tagName;
+  var type = $(this).attr('type');
+  var val;
+  if(tag=='select') {
+    val=$(this).find('option:selected').text();
+  }
+  else{
+    val = $(this).val();
+  }
+  console.log('changed '+ tag+' '+type+' field: '+name+' value:'+val);
+
+  if(type=='checkbox'){
+    var arr=[];
+    $('[type=checkbox]:checked').each(function(){
+      arr.push($(this).val());
+    });
+    if(docState.data.interests===undefined) docState.data.interests=[];
+    docState.data.interests=arr;
+  }else{
+    //var sname = synonym.map[name];
+    docState.data[name]=val;
+  }
+
+  docState.save();
+}
+
 docState.check = function(){
   if(supports_html5_storage()){
     docState.storageStatus='OK';
@@ -31,7 +59,7 @@ docState.save = function(){
   }
   if(this.flagLock) return false;
 
-  if(this.debug) console.log(this.data);
+  //if(this.debug) console.log(this.data);
   var str=JSON.stringify(this.data);
   if(this.debug) console.log(str);
   localStorage['docStateData']=str;
@@ -47,9 +75,17 @@ docState.load = function(){
   var obj=JSON.parse(localStorage['docStateData']);
   this.data = obj;
   if(this.debug) console.log('Load done');
-  if(this.debug) console.log(this.data);
-  // TODO: Заполнение всех полей
+  //if(this.debug) console.log(this.data);
+
+  // Заполнение всех полей
   var dat=this.data;
+  delete dat.interests;
+  delete dat.localeID;
+  for(key in dat){
+    formControl.set(key, dat[key]);
+  }
+  $("#birthdate").val(dat.birthdate);
+
 
   this.flagLock=false;
 };
@@ -80,10 +116,7 @@ $(document).ready(function(){
   if(this.debug) console.log("Event 'ready'");
   BATTERY.scale(true);
   BATTERY.resize();
-  $("input").on("change",function(){
-    var val = $(this).val();
-    console.log("Input: "+val);
-  })
+  $("form input, form select").on("change",fieldChange)
 
 });
 

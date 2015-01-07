@@ -35,15 +35,16 @@
 		<h1>{{lang.word.user_profile}}</h1>
 	</div>
 	<div data-role="content">
+    <form id="userProfile" name="userProfile">
 
     <div class="ui-field-contain">
-      <label for="date">{{lang.word.your_birthday_date}}:</label>
-        <input type="date" name="date" id="date" value="">
+      <label for="birthdate">{{lang.word.your_birthday_date}}:</label>
+        <input type="date" name="birthdate" id="birthdate" value="">
     </div>
 
     <fieldset class="ui-field-contain">
-      <label for="day">Where you live?</label>
-      <select name="day" id="day" data-native-menu="false">
+      <label for="country">Where you live?</label>
+      <select name="country" id="country" data-native-menu="false">
         <option value="none">Select</option>
         <option value="Russia">Russia</option>
         <option value="Ukraine">Ukraine</option>
@@ -64,9 +65,9 @@
     <div class="ui-field-contain">
       <fieldset data-role="controlgroup">
         <legend>Choose your gender:</legend>
-        <label for="male">Male</label>
+        <label for="male">{{lang.word.male}}</label>
         <input type="radio" name="gender" id="male" value="male">
-        <label for="female">Female</label>
+        <label for="female">{{lang.word.female}}</label>
         <input type="radio" name="gender" id="female" value="female">
       </fieldset>
     </div>
@@ -131,6 +132,7 @@
         <input type="radio" name="weight" id="weight_10" value="weight_10">
       </fieldset>
     </div>
+    </form>
 
 
   </div><!-- / .content -->

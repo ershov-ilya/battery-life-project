@@ -279,14 +279,24 @@ var BLACKBOX = (function() {
       if(!data.birthdate) throw {code: 1, message: "Birthday not set"};
       var birthday = +new Date(data.birthdate);
       analys.age = (today - birthday) / 3600000 / 24 / 365.25; // Израсходовано
+      analys.ageDays = (today - birthday) / 3600000 / 24; // Израсходовано
 
       if(!data.country) throw {code: 2, message: "Country not set"};
-      analys.prediction = prediction(data.country, data.gender); // 100% батарейки
+      analys.predictionAge = prediction(data.country, data.gender); // 100% батарейки
+      analys.predictionDays = analys.predictionAge*365.25;
 
       var estimate=0;
+      var thisEst=0;
       for(key in data){
-        console.log(key+' : '+data[key]+', value='+evaluate(key, data[key]));
+        thisEst=evaluate(key, data[key]);
+        //console.log(key+' : '+data[key]+', value='+thisEst);
+        estimate+=thisEst;
       }
+      console.log("Итог, часов в день:"+estimate);
+      analys.predictionDayLength=24+estimate;
+      //analys.predictionFinish=new Date(analys.predictionDayLength*analys.predictionDays*3600000+birthday);
+      analys.predictionFinishAgeDays=analys.predictionDays*analys.predictionDayLength/24;
+      analys.predictionFinishAge=analys.predictionDayLength*analys.predictionDays / 365.25;
 
     }
     catch(e){
@@ -299,6 +309,10 @@ var BLACKBOX = (function() {
 
   //Public data
   var PUBLIC={
+    get: function(){return result;},
+    test: function(){return analys;},
+    getError: function(){return lastError.message;},
+    resetError: function(){lastError={}; return true;},
     put: function(input){
       if(input===undefined) return false;
       //if(data===input){
@@ -307,13 +321,9 @@ var BLACKBOX = (function() {
       //}
       data = input;
       console.log(data);
-      return process();
-    },
-    get: function(){return result;},
-    test: function(){return analys;},
-    t: function(a,b){return prediction(a,b);},
-    getError: function(){return lastError.message;},
-    resetError: function(){lastError={}; return true;}
+      process();
+      if(DEBUG) console.log(this.test());
+    }
   };
 
   return PUBLIC;

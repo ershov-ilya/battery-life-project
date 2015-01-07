@@ -35,6 +35,7 @@ function fieldChange(){
   }
 
   docState.save();
+  BLACKBOX.put(docState.data);
 }
 
 docState.check = function(){

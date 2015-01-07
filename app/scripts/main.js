@@ -36,6 +36,11 @@ function fieldChange(){
 
   docState.save();
   BLACKBOX.put(docState.data);
+
+  // Custom app func
+  if(name == 'gender'){
+    $('body').removeClass("male").removeClass("female").addClass(val);
+  }
 }
 
 docState.check = function(){
@@ -87,7 +92,7 @@ docState.load = function(){
     formControl.set(key, dat[key]);
   }
   $("#birthdate").val(dat.birthdate);
-
+  $('body').addClass(dat.gender);
 
   this.flagLock=false;
 };

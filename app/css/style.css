@@ -75,3 +75,11 @@ a.change-language-link {
 .red {
   color: #d43f3a;
 }
+
+body.male .battery-container {
+  background: url("../images/male.png") -100px 10px no-repeat;
+}
+
+body.female .battery-container {
+  background: url("../images/female.png") -76px 10px no-repeat;
+}

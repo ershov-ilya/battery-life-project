@@ -69,6 +69,10 @@
       </fieldset>
     </div>
 
+      <a href="#battery_status" class="ui-btn ui-btn-icon-right ui-icon-carat-r">{{lang.word.battery_status}}</a>
+
+      <h3 style="margin: 30px 0 0 0;">Дополнительные опции:</h3>
+
     <div class="ui-field-contain">
       <fieldset data-role="controlgroup">
         <legend>Вы курите?</legend>
@@ -120,15 +124,28 @@
       </fieldset>
     </div>
 
-    <div class="ui-field-contain">
-      <fieldset data-role="controlgroup">
-        <legend>Избыточный вес?</legend>
-        <label for="weight_no">Нет</label>
-        <input type="radio" name="weight" id="weight_no" value="weight_no">
-        <label for="weight_10">Более 5 кг</label>
-        <input type="radio" name="weight" id="weight_10" value="weight_10">
-      </fieldset>
-    </div>
+      <div class="ui-field-contain">
+        <fieldset data-role="controlgroup">
+          <legend>Избыточный вес?</legend>
+          <label for="weight_no">Нет</label>
+          <input type="radio" name="weight" id="weight_no" value="weight_no">
+          <label for="weight_10">Более 5 кг</label>
+          <input type="radio" name="weight" id="weight_10" value="weight_10">
+        </fieldset>
+      </div>
+
+      <div class="ui-field-contain">
+        <fieldset data-role="controlgroup">
+          <legend>Употребляете кофе?</legend>
+          <label for="coffee_no">Нет</label>
+          <input type="radio" name="coffee" id="coffee_no" value="coffee_no">
+          <label for="coffee_1_2">Регулярно 1-2 в день</label>
+          <input type="radio" name="coffee" id="coffee_1_2" value="coffee_1_2">
+          <label for="coffee_3_4">Регулярно 3-4 в день</label>
+          <input type="radio" name="coffee" id="coffee_3_4" value="coffee_3_4">
+        </fieldset>
+      </div>
+
     </form>
 
 

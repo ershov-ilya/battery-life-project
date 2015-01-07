@@ -318,11 +318,23 @@
     <h2>Choose</h2>
   </div>
   <div class="ui-content" role="main">
-    <h2>What is your language?</h2>
-    <div class="ui-grid-a">
-      <div class="flag-wrapper"><a href="#personal_data" ng-click="setLocale('EN')"><div class="flag en"></div></a></div>
-      <div class="flag-wrapper"><a href="#personal_data" ng-click="setLocale('RU')"><div class="flag ru"></div></a></div>
-    </div>
+    <h3>What is your language?</h3>
+    <ul data-role="listview" class="ui-listview">
+      <li>
+        <a href="#personal_data" ng-click="setLocale('EN')" class="ui-btn">
+        <div class="flag en"></div>
+        <h3>English</h3>
+        <p>English</p>
+      </a>
+      </li>
+      <li>
+        <a href="#personal_data" ng-click="setLocale('RU')" class="ui-btn">
+        <div class="flag ru"></div>
+        <h3>Русский</h3>
+        <p>Russian</p>
+      </a>
+      </li>
+    </ul>
   </div>
 </div>
 

@@ -48,6 +48,7 @@ docState.check = function(){
 
   if(localStorage['docStateData']===undefined) {console.log('data empty');}
   else {this.load();}
+  BLACKBOX.put(docState.data);
   return true;
 };
 

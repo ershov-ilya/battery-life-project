@@ -40,7 +40,7 @@ var BATTERY = (function(){
 
   // Public methods
   var PUBLIC = {
-    test: function(){ this.animate(batteryValue, 100);},
+    test: function(){ BATTERY.animate(BLACKBOX.status(), 100); },
 
     setColor: function(){
       var value=batteryValue;

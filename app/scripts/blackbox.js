@@ -217,6 +217,61 @@ var BLACKBOX = (function() {
     return predict[0];
   }
 
+  function evaluate(habbit, variant){
+    var value = 0; // Часов в день
+    var arr={};
+    switch(habbit){
+      case 'smoking':
+        arr={
+          smoking_no:+2,
+          smoking_1_10:-1,
+          smoking_10_30:-3
+        };
+        value = arr[variant];
+        break;
+      case 'alko':
+        arr={
+          alko_no:+2,
+          alko_events:0,
+          alko_1_2:-1,
+          alko_partyman:-2,
+          alkoholic:-3
+        };
+        value = arr[variant];
+        break;
+      case 'sport':
+        arr={
+          sport_no:0,
+          sport_20min:1,
+          sport_1hour:1
+        };
+        value = arr[variant];
+        break;
+      case 'tv':
+        arr={
+          tv_no:0.5,
+          tv_2hours:-0.5
+        };
+        value = arr[variant];
+        break;
+      case 'weight':
+        arr={
+          weight_no:0.5,
+          weight_10:-0.5
+        };
+        value = arr[variant];
+        break;
+      case 'coffee':
+        arr={
+          coffee_no:0,
+          coffee_1:0.5,
+          coffee_2_3:0.5
+        };
+        value = arr[variant];
+        break;
+    }
+    return value;
+  }
 
   function process(){
     try {
@@ -230,7 +285,7 @@ var BLACKBOX = (function() {
 
       var estimate=0;
       for(key in data){
-        console.log(key+' : '+data[key]);
+        console.log(key+' : '+data[key]+', value='+evaluate(key, data[key]));
       }
 
     }

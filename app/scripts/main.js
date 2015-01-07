@@ -78,7 +78,7 @@ docState.load = function(){
   //if(this.debug) console.log(this.data);
 
   // Заполнение всех полей
-  var dat=this.data;
+  var dat=Object.create(this.data);
   delete dat.interests;
   delete dat.localeID;
   for(key in dat){

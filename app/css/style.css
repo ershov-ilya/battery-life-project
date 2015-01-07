@@ -67,3 +67,7 @@ body {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+a.change-language-link {
+  color: #999;
+}

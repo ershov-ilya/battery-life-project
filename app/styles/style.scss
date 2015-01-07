@@ -62,3 +62,16 @@ a.change-language-link{color:#999;}
 
 body.male .battery-container{background: url('../images/male.png') -100px 10px no-repeat;}
 body.female .battery-container{background: url('../images/female.png') -76px 10px no-repeat;}
+
+.flag-wrapper{display: inline-block; margin: 10px;}
+div.flag{min-height: 45px;width:62px; background: url('../images/icons.png') 0 0 no-repeat; display: inline-block; margin: 0;}
+div.flag.ru{background-position: -63px 0;}
+div.flag.fr{background-position: -127px 0;}
+div.flag.en{background-position: -191px 0;}
+div.flag.cn{background-position: -257px 0;}
+div.flag.es{background-position: -321px 0;}
+div.flag.de{background-position: -385px 0;}
+div.flag.tr{background-position: -449px 0;}
+
+.text-center{text-align: center;}
+

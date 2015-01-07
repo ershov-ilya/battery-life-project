@@ -36,7 +36,7 @@
 
     <div class="ui-field-contain">
       <label for="birthdate">{{lang.word.your_birthday_date}} <span class="red">*</span>:</label>
-        <input type="date" name="birthdate" id="birthdate" value="">
+        <input type="date" data-role="date" name="birthdate" id="birthdate" value="">
     </div>
 
     <fieldset class="ui-field-contain">
@@ -320,12 +320,8 @@
   <div class="ui-content" role="main">
     <h2>What is your language?</h2>
     <div class="ui-grid-a">
-      <div class="ui-block-a">
-        <a href="#personal_data" ng-click="setLocale('EN')"  class="ui-btn ui-btn-b ui-shadow ui-corner-all">English</a>
-      </div>
-      <div class="ui-block-b">
-        <a href="#personal_data" ng-click="setLocale('RU')" class="ui-btn ui-btn-b ui-shadow ui-corner-all">Русский</a>
-      </div>
+      <div class="flag-wrapper"><a href="#personal_data" ng-click="setLocale('EN')"><div class="flag en"></div></a></div>
+      <div class="flag-wrapper"><a href="#personal_data" ng-click="setLocale('RU')"><div class="flag ru"></div></a></div>
     </div>
   </div>
 </div>

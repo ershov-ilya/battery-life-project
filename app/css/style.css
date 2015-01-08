@@ -100,6 +100,10 @@ div.flag, .icon {
   margin-right: 10px;
 }
 
+div.flag.il {
+  background-position: -1px 0;
+}
+
 div.flag.ru {
   background-position: -63px 0;
 }
@@ -124,8 +128,8 @@ div.flag.de {
   background-position: -385px 0;
 }
 
-div.flag.tr {
-  background-position: -449px 0;
+div.flag.jp {
+  background-position: -450px 0;
 }
 
 div.flag.mini {

@@ -57,7 +57,7 @@ function MVW($scope) {
     footer:'Футер',
     language_select: 'Выбор языка',
     personal_data: 'Настройки',
-    battery_status:'Состояние Вашей батарейки',
+    battery_status:'Батарея жизни',
     battery:'Батарея',
     user_profile:'Анкета',
     fill_profile:'Заполните анкету',

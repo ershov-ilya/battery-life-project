@@ -8,7 +8,7 @@
 
 var BLACKBOX = (function() {
   // Private data
-  var DEBUG = true,
+  var DEBUG = false,
     batteryStatus = 100,
     data={},
     analys={},
@@ -292,7 +292,6 @@ var BLACKBOX = (function() {
         thisEst=evaluate(key, data[key]);
         estimate+=thisEst;
       }
-      console.log("Итог, часов в день:"+estimate);
       analys.predictionDayLength=24+estimate;
       //analys.predictionFinish=new Date(analys.predictionDayLength*analys.predictionDays*3600000+birthday);
       analys.predictionFinishAgeDays=analys.predictionDays*analys.predictionDayLength/24;

@@ -17,9 +17,9 @@
 		<h1>{{lang.word.personal_data}}</h1>
 	</div>
     <ul data-role="listview">
+      <li><a href="#language_select_dialog" data-rel="dialog" class="change-language-link"><div class="flag mini"></div>Language select</a></li>
       <li><a href="#user_profile">{{lang.word.fill_profile}}</a></li>
       <li><a href="#battery_status"><span class="icon battery"></span>{{lang.word.battery_status}}</a></li>
-      <li><a href="#language_select_dialog" data-rel="dialog" class="change-language-link"><div class="flag mini"></div>Change language</a></li>
     </ul>
   <div data-role="footer" class="footer"></div>
 </div>
@@ -40,28 +40,30 @@
     </div>
 
     <fieldset class="ui-field-contain">
-      <label for="country">Where you live? <span class="red">*</span></label>
+      <label for="country">{{lang.word.where_you_live}} <span class="red">*</span></label>
       <select name="country" id="country" data-native-menu="false">
-        <option value="none">Select</option>
-        <option value="Russia">Russia</option>
-        <option value="Ukraine">Ukraine</option>
-        <option value="Belarus">Belarus</option>
-        <option value="Kazakhstan">Kazakhstan</option>
-        <option value="France">France</option>
-        <option value="Australia">Australia</option>
-        <option value="Canada">Canada</option>
-        <option value="Norway">Norway</option>
-        <option value="Israel">Israel</option>
-        <option value="Spain">Spain</option>
-        <option value="Germany">Germany</option>
-        <option value="United Kingdom">United Kingdom</option>
-        <option value="United States Of America">United States Of America</option>
+        <option value="none" style="display:none; height:0;"></option>
+        <option value="Russia">{{lang.word.Russia}}</option>
+        <option value="Ukraine">{{lang.word.Ukraine}}</option>
+        <option value="Belarus">{{lang.word.Belarus}}</option>
+        <option value="Kazakhstan">{{lang.word.Kazakhstan}}</option>
+        <option value="China">{{lang.word.China}}</option>
+        <option value="Chad">{{lang.word.Africa}}</option>
+        <option value="United States Of America">{{lang.word.USA}}</option>
+        <option value="United Kingdom">{{lang.word.UnitedKingdom}}</option>
+        <option value="France">{{lang.word.France}}</option>
+        <option value="Australia">{{lang.word.Australia}}</option>
+        <option value="Canada">{{lang.word.Canada}}</option>
+        <option value="Norway">{{lang.word.Norway}}</option>
+        <option value="Israel">{{lang.word.Israel}}</option>
+        <option value="Spain">{{lang.word.Spain}}</option>
+        <option value="Germany">{{lang.word.Germany}}</option>
       </select>
     </fieldset>
 
     <div class="ui-field-contain">
       <fieldset data-role="controlgroup">
-        <legend>Choose your gender:</legend>
+        <legend>{{lang.word.Choose_your_gender}}</legend>
         <label for="male">{{lang.word.male}}</label>
         <input type="radio" name="gender" id="male" value="male">
         <label for="female">{{lang.word.female}}</label>
@@ -71,32 +73,32 @@
 
       <a href="#battery_status" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><span class="icon battery"></span>{{lang.word.battery_status}}</a>
 
-      <h3 style="margin: 30px 0 0 0;">Дополнительные опции:</h3>
+      <h3 style="margin: 30px 0 0 0;">{{lang.word.additional_options}}</h3>
 
     <div class="ui-field-contain">
       <fieldset data-role="controlgroup">
-        <legend>Вы курите?</legend>
-        <label for="smoking_no">Нет</label>
+        <legend>{{lang.word.Do_you_smoke}}</legend>
+        <label for="smoking_no">{{lang.word.no}}</label>
         <input type="radio" name="smoking" id="smoking_no" value="smoking_no">
-        <label for="smoking_1_10">1-10 сигарет в день</label>
+        <label for="smoking_1_10">{{lang.word.smoking_1_10}}</label>
         <input type="radio" name="smoking" id="smoking_1_10" value="smoking_1_10">
-        <label for="smoking_10_30">10-30 сигарет в день</label>
+        <label for="smoking_10_30">{{lang.word.smoking_10_30}}</label>
         <input type="radio" name="smoking" id="smoking_10_30" value="smoking_10_30">
       </fieldset>
     </div>
 
     <div class="ui-field-contain">
       <fieldset data-role="controlgroup">
-        <legend>Отношение к алкоголю?</legend>
-        <label for="alko_no">Категорически нет</label>
+        <legend>{{lang.word.alko}}</legend>
+        <label for="alko_no">{{lang.word.alko_no}}</label>
         <input type="radio" name="alko" id="alko_no" value="alko_no">
-        <label for="alko_events">Редко, по праздникам</label>
+        <label for="alko_events">{{lang.word.alko_events}}</label>
         <input type="radio" name="alko" id="alko_events" value="alko_events">
-        <label for="alko_1_2">Иногда, 1-2 порции вечером</label>
+        <label for="alko_1_2">{{lang.word.alko_1_2}}</label>
         <input type="radio" name="alko" id="alko_1_2" value="alko_1_2">
-        <label for="alko_partyman">Когда с друзьями. По другому никак</label>
+        <label for="alko_partyman">{{lang.word.alko_partyman}}</label>
         <input type="radio" name="alko" id="alko_partyman" value="alko_partyman">
-        <label for="alkoholic">Готов признать - я алкоголик</label>
+        <label for="alkoholic">{{lang.word.alkoholic}}</label>
         <input type="radio" name="alko" id="alkoholic" value="alkoholic">
       </fieldset>
     </div>
@@ -104,12 +106,12 @@
 
     <div class="ui-field-contain">
       <fieldset data-role="controlgroup">
-        <legend>Физические упражения?</legend>
-        <label for="sport_no">Нет</label>
+        <legend>{{lang.word.sport}}</legend>
+        <label for="sport_no">{{lang.word.sport_no}}</label>
         <input type="radio" name="sport" id="sport_no" value="sport_no">
-        <label for="sport_20min">Регулярно, 20 минут в день</label>
+        <label for="sport_20min">{{lang.word.sport_20min}}</label>
         <input type="radio" name="sport" id="sport_20min" value="sport_20min">
-        <label for="sport_1hour">Регулярно, час в день</label>
+        <label for="sport_1hour">{{lang.word.sport_1hour}}</label>
         <input type="radio" name="sport" id="sport_1hour" value="sport_1hour">
       </fieldset>
     </div>
@@ -310,8 +312,8 @@
     <li><a href="#personal_data">{{lang.word.personal_data}}</a></li>
   </ul>
   <div data-role="content">
-    <p><b>Подсказка:</b> Вы можете поэкспериментировать с разными значениями в анкете, например посмотреть, как выглядела бы Ваша батарейка, если бы Вы жили в другой стране.</p>
-    <p>Или вы можете ввести данные кого-то из близких.</p>
+    <p><b>{{lang.word.hint}}</b> {{lang.word.hint1}}</p>
+    <p>{{lang.word.hint2}}</p>
   </div>
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>

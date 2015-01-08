@@ -7,7 +7,7 @@
  */
 /* jshint devel:true */
 
-var docState={data:{},changes:false,debug:true,flagReset:false};
+var docState={data:{},changes:false,debug:false,flagReset:false};
 
 function fieldChange(){
   var name = $(this).attr("name");

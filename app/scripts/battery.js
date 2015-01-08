@@ -8,7 +8,7 @@
 
 var BATTERY = (function(){
   // Private methods and data
-  var DEBUG=true;
+  var DEBUG=false;
   var batteryValue = 100;
   var width = 500;
   var height = 1000;

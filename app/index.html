@@ -12,6 +12,7 @@
 </head>
 <body ng-app ng-controller="MVW" ng-init="init()">
 
+
 <div data-role="page" id="personal_data">
 	<div data-role="header">
 		<h1>{{lang.word.personal_data}}</h1>
@@ -23,8 +24,6 @@
     </ul>
   <div data-role="footer" class="footer"></div>
 </div>
-
-
 
 
 <div data-role="page" id="user_profile">
@@ -158,8 +157,6 @@
   </ul>
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>
-
-
 
 
 <div data-role="page" id="battery_status">
@@ -318,6 +315,7 @@
   <div data-role="footer" ng-bind-html="footer" class="footer"></div>
 </div>
 
+
 <div data-role="page" data-dialog="true" id="language_select_dialog">
   <div data-role="header">
     <h2>Choose</h2>
@@ -327,17 +325,38 @@
     <ul data-role="listview" class="ui-listview">
       <li>
         <a href="#user_profile" ng-click="setLocale('EN')" class="ui-btn">
-        <div class="flag en"></div>
-        <h3>English</h3>
-        <p>English</p>
-      </a>
+          <div class="flag en"></div>
+          <h3>English</h3>
+          <p>English</p>
+        </a>
       </li>
       <li>
         <a href="#user_profile" ng-click="setLocale('RU')" class="ui-btn">
-        <div class="flag ru"></div>
-        <h3>Русский</h3>
-        <p>Russian</p>
-      </a>
+          <div class="flag ru"></div>
+          <h3>Русский</h3>
+          <p>Russian</p>
+        </a>
+      </li>
+      <li>
+        <a href="#user_profile" ng-click="setLocale('FR')" class="ui-btn">
+          <div class="flag fr"></div>
+          <h3>Français</h3>
+          <p>French</p>
+        </a>
+      </li>
+      <li>
+        <a href="#user_profile" ng-click="setLocale('DE')" class="ui-btn">
+          <div class="flag de"></div>
+          <h3>Allemand</h3>
+          <p>German</p>
+        </a>
+      </li>
+      <li>
+        <a href="#user_profile" ng-click="setLocale('CN')" class="ui-btn">
+          <div class="flag cn"></div>
+          <h3>中国</h3>
+          <p>Chinese</p>
+        </a>
       </li>
     </ul>
   </div>

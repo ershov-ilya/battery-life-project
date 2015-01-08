@@ -25,6 +25,15 @@ function MVW($scope) {
       case 'DE':
         $scope.lang.word = DE;
         break;
+      case 'IL':
+        $scope.lang.word = IL;
+        break;
+      case 'ES':
+        $scope.lang.word = ES;
+        break;
+      case 'JP':
+        $scope.lang.word = JP;
+        break;
       case 'CN':
         $scope.lang.word = CN;
         break;
@@ -57,8 +66,85 @@ function MVW($scope) {
 
 } // function MVW($scope)
 
-  // Локализации
-  var RU={
+// Локализации
+var EN={
+  back:'settings',
+  page:'page',
+  Page:'Page',
+  footer:'Footer',
+  language_select: 'Language select',
+  personal_data: 'Settings',
+  battery_status:'Yours battery status',
+  battery:'Battery',
+  user_profile:'User profile',
+
+  // Анкета
+  fill_profile:'Fill profile',
+  clarify_data:'Clarify data',
+  your_birthday_date:'Your birthday date',
+  Choose_your_gender:'Choose your gender:',
+  male:'Male',
+  female:'Female',
+  additional_options:'Additional options:',
+
+  // Дополнительные опции
+  no:'No',
+  Do_you_smoke:'Do you smoke?',
+  smoking_1_10:'1-9 cigarettes per day',
+  smoking_10_30:'10-30 cigarettes a day',
+
+  alko:'Drinking habits?',
+  alko_no:'Absolutely not',
+  alko_events:'Occasionally, by events',
+  alko_1_2:'Sometimes, in the evening 1-2 servings',
+  alko_partyman:'While time spending with friends',
+  alkoholic:'Willing to admit - I\'m an alcoholic',
+
+  sport:'Physical exercises?',
+  sport_no:'No',
+  sport_20min:'Regularly, 20 minutes a day',
+  sport_1hour:'Regularly, an hour a day',
+
+  tv:'Watch TV?',
+  tv_no:'No',
+  tv_2hours:'A couple of hours a day',
+
+  weight:'Overweight?',
+  weight_no:'No',
+  weight_10:'More than 5 kg',
+
+  coffee:'Drink coffee?',
+  coffee_no:'No',
+  coffee_1_2:'Regularly, 1-2 cups a day',
+  coffee_3_4:'Regularly, 3-4 cups a day',
+
+
+  // Страны
+  where_you_live:'Country of residence',
+  Russia:'Russia',
+  Ukraine:'Ukraine',
+  Belarus:'Belarus',
+  Kazakhstan:'Kazakhstan',
+  China:'China',
+  Africa:'Africa (Chad)',
+  USA:'United States Of America',
+  UnitedKingdom:'United Kingdom',
+  France:'France',
+  Australia:'Australia',
+  Canada:'Canada',
+  Norway:'Norway',
+  Israel:'Israel',
+  Spain:'Spain',
+  Japan:'Japan',
+  Germany:'Germany',
+
+  hint:'Hint:',
+  hint1:'You can experiment with different values in the user profile, for example to see how will look your battery, if you lived in another country.',
+  hint2:'Or you can enter the data of someone from your family.',
+  content:'content'
+};
+
+var RU={
     back:'настройки',
     page:'страница',
     Page:'Страница',
@@ -126,6 +212,7 @@ function MVW($scope) {
     Norway:'Норвегия',
     Israel:'Израиль',
     Spain:'Испания',
+    Japan:'Япония',
     Germany:'Германия',
 
 
@@ -133,82 +220,6 @@ function MVW($scope) {
     hint1:'Вы можете поэкспериментировать с разными значениями в анкете, например посмотреть, как выглядела бы Ваша батарейка, если бы Вы жили в другой стране.',
     hint2:'Или вы можете ввести данные кого-то из близких.',
     content:'Контент'
-  };
-
-  var EN={
-    back:'settings',
-    page:'page',
-    Page:'Page',
-    footer:'Footer',
-    language_select: 'Language select',
-    personal_data: 'Settings',
-    battery_status:'Yours battery status',
-    battery:'Battery',
-    user_profile:'User profile',
-
-    // Анкета
-    fill_profile:'Fill profile',
-    clarify_data:'Clarify data',
-    your_birthday_date:'Your birthday date',
-    Choose_your_gender:'Choose your gender:',
-    male:'Male',
-    female:'Female',
-    additional_options:'Additional options:',
-
-    // Дополнительные опции
-    no:'No',
-    Do_you_smoke:'Do you smoke?',
-    smoking_1_10:'1-9 cigarettes per day',
-    smoking_10_30:'10-30 cigarettes a day',
-
-    alko:'Drinking habits?',
-    alko_no:'Absolutely not',
-    alko_events:'Occasionally, by events',
-    alko_1_2:'Sometimes, in the evening 1-2 servings',
-    alko_partyman:'While time spending with friends',
-    alkoholic:'Willing to admit - I\'m an alcoholic',
-
-    sport:'Physical exercises?',
-    sport_no:'No',
-    sport_20min:'Regularly, 20 minutes a day',
-    sport_1hour:'Regularly, an hour a day',
-
-    tv:'Watch TV?',
-    tv_no:'No',
-    tv_2hours:'A couple of hours a day',
-
-    weight:'Overweight?',
-    weight_no:'No',
-    weight_10:'More than 5 kg',
-
-    coffee:'Drink coffee?',
-    coffee_no:'No',
-    coffee_1_2:'Regularly, 1-2 cups a day',
-    coffee_3_4:'Regularly, 3-4 cups a day',
-
-
-    // Страны
-    where_you_live:'Country of residence',
-    Russia:'Russia',
-    Ukraine:'Ukraine',
-    Belarus:'Belarus',
-    Kazakhstan:'Kazakhstan',
-    China:'China',
-    Africa:'Africa (Chad)',
-    USA:'United States Of America',
-    UnitedKingdom:'United Kingdom',
-    France:'France',
-    Australia:'Australia',
-    Canada:'Canada',
-    Norway:'Norway',
-    Israel:'Israel',
-    Spain:'Spain',
-    Germany:'Germany',
-
-    hint:'Hint:',
-    hint1:'You can experiment with different values in the user profile, for example to see how will look your battery, if you lived in another country.',
-    hint2:'Or you can enter the data of someone from your family.',
-    content:'content'
   };
 
 var FR={
@@ -279,6 +290,7 @@ var FR={
   Norway:'Norvège',
   Israel:'Israël',
   Spain:'Espagne',
+  Japan:'Japon',
   Germany:'Allemagne',
 
   hint:'Astuce:',
@@ -355,12 +367,244 @@ var DE={
   Norway:'Norwegen',
   Israel:'Israel',
   Spain:'Spanien',
+  Japan:'Japan',
   Germany:'Deutschland',
 
   hint:'Hinweis:',
   hint1:'Sie können mit verschiedenen Werten im Benutzerprofil zu experimentieren, zum Beispiel zu sehen, wie Sie für Ihren Akku aus, wenn Sie in einem anderen Land gelebt.',
   hint2:'Oder Sie können die Daten von jemand aus Ihrer Familie geben.',
   content:'inhalt'
+};
+
+var IL={
+  back:'settings',
+  page:'page',
+  Page:'Page',
+  footer:'Footer',
+  language_select: 'Language select',
+  personal_data: 'Settings',
+  battery_status:'Yours battery status',
+  battery:'Battery',
+  user_profile:'User profile',
+
+  // Анкета
+  fill_profile:'Fill profile',
+  clarify_data:'Clarify data',
+  your_birthday_date:'Your birthday date',
+  Choose_your_gender:'Choose your gender:',
+  male:'Male',
+  female:'Female',
+  additional_options:'Additional options:',
+
+  // Дополнительные опции
+  no:'No',
+  Do_you_smoke:'Do you smoke?',
+  smoking_1_10:'1-9 cigarettes per day',
+  smoking_10_30:'10-30 cigarettes a day',
+
+  alko:'Drinking habits?',
+  alko_no:'Absolutely not',
+  alko_events:'Occasionally, by events',
+  alko_1_2:'Sometimes, in the evening 1-2 servings',
+  alko_partyman:'While time spending with friends',
+  alkoholic:'Willing to admit - I\'m an alcoholic',
+
+  sport:'Physical exercises?',
+  sport_no:'No',
+  sport_20min:'Regularly, 20 minutes a day',
+  sport_1hour:'Regularly, an hour a day',
+
+  tv:'Watch TV?',
+  tv_no:'No',
+  tv_2hours:'A couple of hours a day',
+
+  weight:'Overweight?',
+  weight_no:'No',
+  weight_10:'More than 5 kg',
+
+  coffee:'Drink coffee?',
+  coffee_no:'No',
+  coffee_1_2:'Regularly, 1-2 cups a day',
+  coffee_3_4:'Regularly, 3-4 cups a day',
+
+
+  // Страны
+  where_you_live:'Country of residence',
+  Russia:'Russia',
+  Ukraine:'Ukraine',
+  Belarus:'Belarus',
+  Kazakhstan:'Kazakhstan',
+  China:'China',
+  Africa:'Africa (Chad)',
+  USA:'United States Of America',
+  UnitedKingdom:'United Kingdom',
+  France:'France',
+  Australia:'Australia',
+  Canada:'Canada',
+  Norway:'Norway',
+  Israel:'Israel',
+  Spain:'Spain',
+  Japan:'יפן',
+  Germany:'Germany',
+
+  hint:'Hint:',
+  hint1:'You can experiment with different values in the user profile, for example to see how will look your battery, if you lived in another country.',
+  hint2:'Or you can enter the data of someone from your family.',
+  content:'content'
+};
+
+var ES={
+  back:'settings',
+  page:'page',
+  Page:'Page',
+  footer:'Footer',
+  language_select: 'Language select',
+  personal_data: 'Settings',
+  battery_status:'Yours battery status',
+  battery:'Battery',
+  user_profile:'User profile',
+
+  // Анкета
+  fill_profile:'Fill profile',
+  clarify_data:'Clarify data',
+  your_birthday_date:'Your birthday date',
+  Choose_your_gender:'Choose your gender:',
+  male:'Male',
+  female:'Female',
+  additional_options:'Additional options:',
+
+  // Дополнительные опции
+  no:'No',
+  Do_you_smoke:'Do you smoke?',
+  smoking_1_10:'1-9 cigarettes per day',
+  smoking_10_30:'10-30 cigarettes a day',
+
+  alko:'Drinking habits?',
+  alko_no:'Absolutely not',
+  alko_events:'Occasionally, by events',
+  alko_1_2:'Sometimes, in the evening 1-2 servings',
+  alko_partyman:'While time spending with friends',
+  alkoholic:'Willing to admit - I\'m an alcoholic',
+
+  sport:'Physical exercises?',
+  sport_no:'No',
+  sport_20min:'Regularly, 20 minutes a day',
+  sport_1hour:'Regularly, an hour a day',
+
+  tv:'Watch TV?',
+  tv_no:'No',
+  tv_2hours:'A couple of hours a day',
+
+  weight:'Overweight?',
+  weight_no:'No',
+  weight_10:'More than 5 kg',
+
+  coffee:'Drink coffee?',
+  coffee_no:'No',
+  coffee_1_2:'Regularly, 1-2 cups a day',
+  coffee_3_4:'Regularly, 3-4 cups a day',
+
+
+  // Страны
+  where_you_live:'Country of residence',
+  Russia:'Russia',
+  Ukraine:'Ukraine',
+  Belarus:'Belarus',
+  Kazakhstan:'Kazakhstan',
+  China:'China',
+  Africa:'Africa (Chad)',
+  USA:'United States Of America',
+  UnitedKingdom:'United Kingdom',
+  France:'France',
+  Australia:'Australia',
+  Canada:'Canada',
+  Norway:'Norway',
+  Israel:'Israel',
+  Spain:'Spain',
+  Japan:'Japón',
+  Germany:'Germany',
+
+  hint:'Hint:',
+  hint1:'You can experiment with different values in the user profile, for example to see how will look your battery, if you lived in another country.',
+  hint2:'Or you can enter the data of someone from your family.',
+  content:'content'
+};
+
+var JP={
+  back:'settings',
+  page:'page',
+  Page:'Page',
+  footer:'Footer',
+  language_select: 'Language select',
+  personal_data: 'Settings',
+  battery_status:'Yours battery status',
+  battery:'Battery',
+  user_profile:'User profile',
+
+  // Анкета
+  fill_profile:'Fill profile',
+  clarify_data:'Clarify data',
+  your_birthday_date:'Your birthday date',
+  Choose_your_gender:'Choose your gender:',
+  male:'Male',
+  female:'Female',
+  additional_options:'Additional options:',
+
+  // Дополнительные опции
+  no:'No',
+  Do_you_smoke:'Do you smoke?',
+  smoking_1_10:'1-9 cigarettes per day',
+  smoking_10_30:'10-30 cigarettes a day',
+
+  alko:'Drinking habits?',
+  alko_no:'Absolutely not',
+  alko_events:'Occasionally, by events',
+  alko_1_2:'Sometimes, in the evening 1-2 servings',
+  alko_partyman:'While time spending with friends',
+  alkoholic:'Willing to admit - I\'m an alcoholic',
+
+  sport:'Physical exercises?',
+  sport_no:'No',
+  sport_20min:'Regularly, 20 minutes a day',
+  sport_1hour:'Regularly, an hour a day',
+
+  tv:'Watch TV?',
+  tv_no:'No',
+  tv_2hours:'A couple of hours a day',
+
+  weight:'Overweight?',
+  weight_no:'No',
+  weight_10:'More than 5 kg',
+
+  coffee:'Drink coffee?',
+  coffee_no:'No',
+  coffee_1_2:'Regularly, 1-2 cups a day',
+  coffee_3_4:'Regularly, 3-4 cups a day',
+
+
+  // Страны
+  where_you_live:'Country of residence',
+  Russia:'Russia',
+  Ukraine:'Ukraine',
+  Belarus:'Belarus',
+  Kazakhstan:'Kazakhstan',
+  China:'China',
+  Africa:'Africa (Chad)',
+  USA:'United States Of America',
+  UnitedKingdom:'United Kingdom',
+  France:'France',
+  Australia:'Australia',
+  Canada:'Canada',
+  Norway:'Norway',
+  Israel:'Israel',
+  Spain:'Spain',
+  Japan:'日本',
+  Germany:'Germany',
+
+  hint:'Hint:',
+  hint1:'You can experiment with different values in the user profile, for example to see how will look your battery, if you lived in another country.',
+  hint2:'Or you can enter the data of someone from your family.',
+  content:'content'
 };
 
 var CN={
@@ -431,6 +675,7 @@ var CN={
   Norway:'挪威',
   Israel:'以色列',
   Spain:'西班牙',
+  Japan:'日本',
   Germany:'德国',
 
   hint:'提示：',

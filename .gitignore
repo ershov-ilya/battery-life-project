@@ -6,4 +6,3 @@ dist
 bower_components/
 test/
 app/ProjectSettings
-app/config.xml

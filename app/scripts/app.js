@@ -74,7 +74,7 @@ function MVW($scope) {
     Do_you_smoke:'Вы курите?',
     smoking_1_10:'1-9 сигарет в день',
     smoking_10_30:'10-30 сигарет в день',
-    
+
     alko:'Отношение к алкоголю?',
     alko_no:'Категорически нет',
     alko_events:'Редко, по праздникам',
@@ -87,7 +87,18 @@ function MVW($scope) {
     sport_20min:'Регулярно, 20 минут в день',
     sport_1hour:'Регулярно, час в день',
 
+    tv:'Смотрите ТВ?',
+    tv_no:'Нет',
+    tv_2hours:'Пару часов в день',
 
+    weight:'Избыточный вес?',
+    weight_no:'Нет',
+    weight_10:'Более 5 кг',
+
+    coffee:'Употребляете кофе?',
+    coffee_no:'Нет',
+    coffee_1_2:'Регулярно 1-2 в день',
+    coffee_3_4:'Регулярно 3-4 в день',
 
 
     // Страны
@@ -152,6 +163,19 @@ function MVW($scope) {
     sport_no:'No',
     sport_20min:'Regularly, 20 minutes a day',
     sport_1hour:'Regularly, an hour a day',
+
+    tv:'Watch TV?',
+    tv_no:'No',
+    tv_2hours:'A couple of hours a day',
+
+    weight:'Overweight?',
+    weight_no:'No',
+    weight_10:'More than 5 kg',
+
+    coffee:'Drink coffee?',
+    coffee_no:'No',
+    coffee_1_2:'Regularly, 1-2 times a day',
+    coffee_3_4:'Regularly, 3-4 times a day',
 
 
     // Страны

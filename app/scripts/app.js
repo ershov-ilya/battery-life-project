@@ -12,6 +12,7 @@ function MVW($scope) {
   $scope.data ={ localeID:'EN' };
 
   $scope.setLocale = function(localeID, fLoadMode){
+    $('body').removeClass('arabic');
     switch(localeID){
       case 'RU':
         $scope.lang.word = RU;
@@ -26,6 +27,7 @@ function MVW($scope) {
         $scope.lang.word = DE;
         break;
       case 'IL':
+        $('body').addClass('arabic');
         $scope.lang.word = IL;
         break;
       case 'ES':
@@ -377,80 +379,80 @@ var DE={
 };
 
 var IL={
-  back:'settings',
-  page:'page',
-  Page:'Page',
-  footer:'Footer',
-  language_select: 'Language select',
-  personal_data: 'Settings',
-  battery_status:'Yours battery status',
-  battery:'Battery',
-  user_profile:'User profile',
+  back:'הגדרות',
+  page:'דף',
+  Page:'דף',
+  footer:'תחתונה',
+  language_select: 'בחר שפה',
+  personal_data: 'הגדרות',
+  battery_status:'מצב הסוללה שלך',
+  battery:'סוללה',
+  user_profile:'פרופיל משתמש',
 
   // Анкета
-  fill_profile:'Fill profile',
-  clarify_data:'Clarify data',
-  your_birthday_date:'Your birthday date',
-  Choose_your_gender:'Choose your gender:',
-  male:'Male',
-  female:'Female',
-  additional_options:'Additional options:',
+  fill_profile:'מלא פרופיל',
+  clarify_data:'להבהיר נתונים',
+  your_birthday_date:'תאריך יום ההולדת שלך',
+  Choose_your_gender:'בחר המגדר שלך:',
+  male:'זכר',
+  female:'נקבה',
+  additional_options:'אפשרויות נוספות:',
 
   // Дополнительные опции
-  no:'No',
-  Do_you_smoke:'Do you smoke?',
-  smoking_1_10:'1-9 cigarettes per day',
-  smoking_10_30:'10-30 cigarettes a day',
+  no:'לא',
+  Do_you_smoke:'האם אתה מעשן?',
+  smoking_1_10:'9-1 סיגריות ביום',
+  smoking_10_30:'30-10 סיגריות ביום',
 
-  alko:'Drinking habits?',
-  alko_no:'Absolutely not',
-  alko_events:'Occasionally, by events',
-  alko_1_2:'Sometimes, in the evening 1-2 servings',
-  alko_partyman:'While time spending with friends',
-  alkoholic:'Willing to admit - I\'m an alcoholic',
+  alko:'הרגלי שתייה?',
+  alko_no:'בהחלט לא',
+  alko_events:'מדי פעם, על ידי אירועים',
+  alko_1_2:'לפעמים, בשעתי הערב 1-2 מנות',
+  alko_partyman:'בעוד לבלות עם חברים',
+  alkoholic:'מוכן להודות - אני אלכוהוליסט',
 
-  sport:'Physical exercises?',
-  sport_no:'No',
-  sport_20min:'Regularly, 20 minutes a day',
-  sport_1hour:'Regularly, an hour a day',
+  sport:'תרגילים פיזיים?',
+  sport_no:'לא',
+  sport_20min:'באופן קבוע, 20 דקות ביום',
+  sport_1hour:'באופן קבוע, שעה ביום',
 
-  tv:'Watch TV?',
-  tv_no:'No',
-  tv_2hours:'A couple of hours a day',
+  tv:'לצפות בטלוויזיה?',
+  tv_no:'לא',
+  tv_2hours:'כמה שעות ביום',
 
-  weight:'Overweight?',
-  weight_no:'No',
-  weight_10:'More than 5 kg',
+  weight:'סובלים מעודף משקל?',
+  weight_no:'לא',
+  weight_10:'יותר מ -5 קילוגרם',
 
-  coffee:'Drink coffee?',
-  coffee_no:'No',
-  coffee_1_2:'Regularly, 1-2 cups a day',
-  coffee_3_4:'Regularly, 3-4 cups a day',
+  coffee:'לשתות קפה?',
+  coffee_no:'לא',
+  coffee_1_2:'באופן קבוע, כוסות 1 או 2 ביום',
+  coffee_3_4:'באופן קבוע, 3 או 4 כוסות ביום',
 
 
   // Страны
-  where_you_live:'Country of residence',
-  Russia:'Russia',
-  Ukraine:'Ukraine',
-  Belarus:'Belarus',
-  Kazakhstan:'Kazakhstan',
-  China:'China',
-  Africa:'Africa (Chad)',
-  USA:'United States Of America',
-  UnitedKingdom:'United Kingdom',
-  France:'France',
-  Australia:'Australia',
-  Canada:'Canada',
-  Norway:'Norway',
-  Israel:'Israel',
-  Spain:'Spain',
+  where_you_live:'ארץ מגורים',
+  Russia:'רוסיה',
+  Ukraine:'אוקראינה',
+  Belarus:'בלארוס',
+  Kazakhstan:'קזחסטן',
+  China:'סין',
+  Africa:"אפריקה (צ'אד)",
+  USA:'ארצות הברית של אמריקה',
+  UnitedKingdom:'בריטניה',
+  France:'צרפת',
+  Australia:'אוסטרליה',
+  Canada:'קנדה',
+  Norway:'נורווגיה',
+  Israel:'ישראל',
+  Spain:'ספרד',
   Japan:'יפן',
-  Germany:'Germany',
+  Germany:'גרמניה',
 
-  hint:'Hint:',
-  hint1:'You can experiment with different values in the user profile, for example to see how will look your battery, if you lived in another country.',
-  hint2:'Or you can enter the data of someone from your family.',
-  content:'content'
+  hint:'רמז:',
+  hint1:'אתה יכול להתנסות עם ערכים שונים בפרופיל המשתמש, למשל כדי לראות איך ייראה הסוללה שלך, אם אתה גר במדינה אחרת.',
+  hint2:'או שאתה יכול להזין את הנתונים של מישהו מהמשפחה שלך.',
+  content:'תוכן'
 };
 
 var ES={

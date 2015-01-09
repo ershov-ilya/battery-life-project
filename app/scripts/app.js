@@ -44,7 +44,10 @@ function MVW($scope) {
     }
     $scope.data.localeID = localeID;
     if(!fLoadMode) $scope.saveData(); // no save if Load Mode
-    return true;
+
+    window.location.href = '/#user_profile';
+    if(!fLoadMode) location.reload();
+    return false;
   };
 
   $scope.saveData = function(){
